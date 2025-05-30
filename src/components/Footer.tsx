@@ -1,4 +1,3 @@
-
 export const Footer = () => {
   return (
     <footer className="bg-[#0A2F51] text-white py-12">
@@ -59,7 +58,7 @@ export const Footer = () => {
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 LegisClear. All rights reserved. Empowering democracy through clarity.
+            © 2025 LegisClear. All rights reserved. Empowering democracy through clarity.
           </p>
         </div>
       </div>
