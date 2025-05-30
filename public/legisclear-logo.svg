@@ -1,0 +1,44 @@
+
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer ring representing government/law -->
+  <circle
+    cx="30"
+    cy="30"
+    r="18"
+    stroke="#0A2F51"
+    stroke-width="1.5"
+    fill="none"
+    opacity="0.8"
+  />
+  
+  <!-- Inner geometric pattern representing AI/clarity -->
+  <path
+    d="M22 30L26 26L30 30L34 26L38 30"
+    stroke="#0A2F51"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+  
+  <!-- Central connecting nodes -->
+  <circle cx="26" cy="26" r="2" fill="#0A2F51" />
+  <circle cx="30" cy="30" r="2" fill="#0A2F51" />
+  <circle cx="34" cy="26" r="2" fill="#0A2F51" />
+  
+  <!-- Additional connection lines for AI network feel -->
+  <path
+    d="M26 26L30 22M34 26L30 22M30 30L30 38"
+    stroke="#0A2F51"
+    stroke-width="1"
+    stroke-linecap="round"
+    opacity="0.6"
+  />
+  
+  <!-- Small accent dots -->
+  <circle cx="30" cy="22" r="1.5" fill="#0A2F51" opacity="0.7" />
+  <circle cx="30" cy="38" r="1.5" fill="#0A2F51" opacity="0.7" />
+  
+  <!-- Company name -->
+  <text x="70" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2F51">LegisClear</text>
+</svg>
