@@ -29,7 +29,7 @@ export const VisionSection = () => {
             <Button
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-[#0A2F51] px-12 py-4 text-lg font-semibold"
+              className="border-white text-[#43B88C] hover:bg-white hover:text-[#0A2F51] px-12 py-4 text-lg font-semibold"
             >
               Stay Informed
             </Button>
