@@ -56,6 +56,12 @@ export const Navigation = () => {
             >
               How It Works
             </button>
+            <button
+              onClick={() => scrollToSection("pricing")}
+              className="text-[#0E5A8A] hover:text-[#178ACB] transition-colors"
+            >
+              Pricing
+            </button>
           </div>
           <Button
             onClick={() => scrollToSection("vision")}
