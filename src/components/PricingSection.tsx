@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Check, ArrowRight, Mail } from "lucide-react";
 
 export const PricingSection = () => {
   return (
@@ -19,7 +19,12 @@ export const PricingSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Basic Plan */}
-          <Card className="relative border-2 border-gray-200 hover:border-[#178ACB] transition-colors">
+          <Card className="relative border-2 border-[#43B88C] hover:border-[#29A09D] transition-colors">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <span className="bg-[#43B88C] text-white px-4 py-1 rounded-full text-sm font-semibold">
+                Most Popular
+              </span>
+            </div>
             <CardHeader className="text-center p-8">
               <CardTitle className="text-2xl font-bold text-[#0A2F51] mb-2">
                 Basic
@@ -53,19 +58,15 @@ export const PricingSection = () => {
                   <span>Email support</span>
                 </li>
               </ul>
-              <Button className="w-full bg-[#178ACB] hover:bg-[#0E5A8A] text-white py-3">
+              <Button className="w-full bg-[#43B88C] hover:bg-[#29A09D] text-white py-3 flex items-center justify-center gap-2">
                 Get Started
+                <ArrowRight className="w-4 h-4" />
               </Button>
             </CardContent>
           </Card>
 
           {/* Enterprise Plan */}
-          <Card className="relative border-2 border-[#43B88C] hover:border-[#29A09D] transition-colors">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <span className="bg-[#43B88C] text-white px-4 py-1 rounded-full text-sm font-semibold">
-                Most Popular
-              </span>
-            </div>
+          <Card className="relative border-2 border-gray-200 hover:border-[#178ACB] transition-colors">
             <CardHeader className="text-center p-8">
               <CardTitle className="text-2xl font-bold text-[#0A2F51] mb-2">
                 Enterprise
@@ -103,8 +104,9 @@ export const PricingSection = () => {
                   <span>White-label options</span>
                 </li>
               </ul>
-              <Button className="w-full bg-[#43B88C] hover:bg-[#29A09D] text-white py-3">
+              <Button className="w-full bg-[#178ACB] hover:bg-[#0E5A8A] text-white py-3 flex items-center justify-center gap-2">
                 Contact Sales
+                <Mail className="w-4 h-4" />
               </Button>
             </CardContent>
           </Card>
