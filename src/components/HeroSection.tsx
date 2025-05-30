@@ -45,7 +45,7 @@ export const HeroSection = () => {
               onClick={scrollToNext}
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-[#0A2F51] px-8 py-4 text-lg"
+              className="border-white text-[#43B88C] hover:bg-white hover:text-[#0A2F51] px-8 py-4 text-lg"
             >
               Learn More
             </Button>
