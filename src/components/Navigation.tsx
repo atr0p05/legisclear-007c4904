@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/Logo";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,11 +31,12 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <div className={`text-2xl font-bold transition-colors duration-300 ${
-            isScrolled ? "text-[#0A2F51]" : "text-white drop-shadow-md"
-          }`}>
-            LegisClear
-          </div>
+          <Logo 
+            className={`transition-colors duration-300 ${
+              isScrolled ? "text-[#0A2F51]" : "text-white drop-shadow-md"
+            }`}
+            size={32}
+          />
           <div className="hidden md:flex space-x-8">
             <button
               onClick={() => scrollToSection("challenge")}

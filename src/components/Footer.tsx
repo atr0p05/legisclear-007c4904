@@ -1,10 +1,12 @@
+import { Logo } from "@/components/Logo";
+
 export const Footer = () => {
   return (
     <footer className="bg-[#0A2F51] text-white py-12">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">LegisClear</h3>
+            <Logo className="text-white mb-4" size={36} />
             <p className="text-gray-300">
               Demystifying legislation for all. Empowering citizens with 
               AI-powered insights into government bills and laws.
