@@ -30,7 +30,7 @@ export const PricingSection = () => {
                 Basic
               </CardTitle>
               <div className="mb-4">
-                <span className="text-4xl font-bold text-[#178ACB]">$5</span>
+                <span className="text-4xl font-bold text-[#43B88C]">$5</span>
                 <span className="text-gray-600">/month</span>
               </div>
               <p className="text-gray-600">Perfect for individual researchers and citizens</p>
