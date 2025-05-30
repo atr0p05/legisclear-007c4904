@@ -19,7 +19,7 @@ export const PricingSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Basic Plan */}
-          <Card className="relative border-2 border-[#43B88C] hover:border-[#29A09D] transition-colors">
+          <Card className="relative border-2 border-[#43B88C] hover:border-[#29A09D] transition-colors flex flex-col h-full">
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <span className="bg-[#43B88C] text-white px-4 py-1 rounded-full text-sm font-semibold">
                 Most Popular
@@ -35,8 +35,8 @@ export const PricingSection = () => {
               </div>
               <p className="text-gray-600">Perfect for individual researchers and citizens</p>
             </CardHeader>
-            <CardContent className="p-8 pt-0">
-              <ul className="space-y-4 mb-8">
+            <CardContent className="p-8 pt-0 flex flex-col flex-grow">
+              <ul className="space-y-4 mb-8 flex-grow">
                 <li className="flex items-center">
                   <Check className="w-5 h-5 text-[#43B88C] mr-3" />
                   <span>20 queries per month</span>
@@ -58,7 +58,7 @@ export const PricingSection = () => {
                   <span>Email support</span>
                 </li>
               </ul>
-              <Button className="w-full bg-[#43B88C] hover:bg-[#29A09D] text-white py-3 flex items-center justify-center gap-2">
+              <Button className="w-full bg-[#43B88C] hover:bg-[#29A09D] text-white py-3 flex items-center justify-center gap-2 mt-auto">
                 Get Started
                 <ArrowRight className="w-4 h-4" />
               </Button>
@@ -66,7 +66,7 @@ export const PricingSection = () => {
           </Card>
 
           {/* Enterprise Plan */}
-          <Card className="relative border-2 border-gray-200 hover:border-[#178ACB] transition-colors">
+          <Card className="relative border-2 border-gray-200 hover:border-[#178ACB] transition-colors flex flex-col h-full">
             <CardHeader className="text-center p-8">
               <CardTitle className="text-2xl font-bold text-[#0A2F51] mb-2">
                 Enterprise
@@ -77,8 +77,8 @@ export const PricingSection = () => {
               </div>
               <p className="text-gray-600">For organizations and power users</p>
             </CardHeader>
-            <CardContent className="p-8 pt-0">
-              <ul className="space-y-4 mb-8">
+            <CardContent className="p-8 pt-0 flex flex-col flex-grow">
+              <ul className="space-y-4 mb-8 flex-grow">
                 <li className="flex items-center">
                   <Check className="w-5 h-5 text-[#43B88C] mr-3" />
                   <span>Unlimited API access</span>
@@ -104,7 +104,7 @@ export const PricingSection = () => {
                   <span>White-label options</span>
                 </li>
               </ul>
-              <Button className="w-full bg-[#178ACB] hover:bg-[#0E5A8A] text-white py-3 flex items-center justify-center gap-2">
+              <Button className="w-full bg-[#178ACB] hover:bg-[#0E5A8A] text-white py-3 flex items-center justify-center gap-2 mt-auto">
                 Contact Sales
                 <Mail className="w-4 h-4" />
               </Button>
