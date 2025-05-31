@@ -1,4 +1,6 @@
+
 import { Logo } from "@/components/Logo";
+import { Linkedin } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -45,6 +47,14 @@ export const Footer = () => {
               Stay updated with the latest legislative insights and platform updates.
             </p>
             <div className="flex space-x-4">
+              <a 
+                href="https://linkedin.com/company/legisclear" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 bg-[#0077B5] rounded-full flex items-center justify-center hover:bg-[#005885] transition-colors"
+              >
+                <Linkedin size={16} className="text-white" />
+              </a>
               <div className="w-8 h-8 bg-[#178ACB] rounded-full flex items-center justify-center">
                 <span className="text-xs">T</span>
               </div>
