@@ -60,6 +60,9 @@ export const EnhancedCTAButton = ({
     }
   };
 
+  // Check if children already contains download text/icon to avoid duplication
+  const hasDownloadInChildren = typeof children === 'string' && children.toLowerCase().includes('download');
+
   return (
     <Button
       onClick={handleClick}
@@ -79,9 +82,12 @@ export const EnhancedCTAButton = ({
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
       
       <span className="relative z-10">{children}</span>
-      <span className="relative z-10">
-        {getIcon()}
-      </span>
+      {/* Only show icon if it's not a download variant with download already in text */}
+      {!(variant === "download" && hasDownloadInChildren) && (
+        <span className="relative z-10">
+          {getIcon()}
+        </span>
+      )}
     </Button>
   );
 };
