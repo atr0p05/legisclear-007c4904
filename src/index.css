@@ -139,9 +139,9 @@
     @apply bg-gradient-to-r from-[#178ACB] to-[#43B88C] bg-clip-text text-transparent;
   }
 
-  /* Professional text shadow for hero */
-  .text-shadow-lg {
-    text-shadow: 0 0 20px rgba(67, 184, 140, 0.5);
+  /* Subtle text shadow for hero - reduced intensity */
+  .text-shadow-sm {
+    text-shadow: 0 0 10px rgba(67, 184, 140, 0.3);
   }
 
   /* Enhanced button styles */

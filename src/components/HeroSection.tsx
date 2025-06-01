@@ -37,7 +37,7 @@ export const HeroSection = () => {
             }`}>
               Powered by 
               <span className={`mx-2 transition-all duration-500 delay-500 ${
-                isVisible ? 'text-shadow-lg animate-pulse' : ''
+                isVisible ? 'text-shadow-sm' : ''
               }`}>
                 RAG AI
               </span>

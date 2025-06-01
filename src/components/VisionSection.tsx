@@ -1,25 +1,25 @@
 
 import { EnhancedCTAButton } from "@/components/EnhancedCTAButton";
 import { useOneTimeAnimation } from "@/hooks/useOneTimeAnimation";
-import { useLegalStatistic } from "@/hooks/useCountUp";
-import { useEffect, useRef } from "react";
+import { useLegalStatistic } from "@/hooks/useLegalStatistic";
+import { useEffect } from "react";
 
 export const VisionSection = () => {
   const { elementRef: sectionRef, isVisible } = useOneTimeAnimation({ threshold: 0.2 });
-  const { elementRef: statsRef, isVisible: statsVisible, hasTriggered } = useOneTimeAnimation({ threshold: 0.5 });
+  const { elementRef: statsRef, isVisible: statsVisible } = useOneTimeAnimation({ threshold: 0.5 });
   
   const stat1 = useLegalStatistic("6-80x", { duration: 2500 });
   const stat2 = useLegalStatistic("48%", { duration: 2000 });  
   const stat3 = useLegalStatistic("840%+", { duration: 3000 });
 
   useEffect(() => {
-    if (statsVisible && !hasTriggered) {
+    if (statsVisible && !stat1.hasStarted) {
       // Start animations with stagger, but only once
       setTimeout(() => stat1.startAnimation(), 200);
       setTimeout(() => stat2.startAnimation(), 400);
       setTimeout(() => stat3.startAnimation(), 600);
     }
-  }, [statsVisible, hasTriggered, stat1, stat2, stat3]);
+  }, [statsVisible, stat1, stat2, stat3]);
 
   return (
     <section id="vision" className="py-20 bg-gradient-to-r from-[#0A2F51] via-[#0E5A8A] to-[#178ACB]" ref={sectionRef}>
