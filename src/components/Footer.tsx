@@ -10,7 +10,7 @@ export const Footer = () => {
           <div>
             <Logo className="text-white mb-4" size={36} />
             <p className="text-gray-300">
-              LegisClear: RAG-Powered Clarity for the Legal Profession.
+              LegisClear LLC: RAG-Powered Clarity for the Legal Profession.
               Empowering legal professionals with verifiable, source-grounded AI intelligence.
             </p>
           </div>
@@ -80,7 +80,7 @@ export const Footer = () => {
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2025 LegisClear. All rights reserved. Verifiable Legal Intelligence. Powered by RAG.
+            © 2025 LegisClear LLC. All rights reserved. Verifiable Legal Intelligence. Powered by RAG.
           </p>
         </div>
       </div>

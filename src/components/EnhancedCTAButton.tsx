@@ -78,13 +78,10 @@ export const EnhancedCTAButton = ({
       {/* Hover glow effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
       
-      {variant === "download" && <Download className={`w-4 h-4 transition-transform duration-300 ${isHovered ? 'animate-bounce' : ''}`} />}
       <span className="relative z-10">{children}</span>
-      {variant !== "download" && (
-        <span className="relative z-10">
-          {getIcon()}
-        </span>
-      )}
+      <span className="relative z-10">
+        {getIcon()}
+      </span>
     </Button>
   );
 };

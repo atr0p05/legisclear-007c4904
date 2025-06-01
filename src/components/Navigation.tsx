@@ -75,14 +75,7 @@ export const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-4">
-            <Button
-              onClick={openDemoEmail}
-              className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-4 py-2 shadow-lg flex items-center gap-2 font-semibold text-sm transform hover:scale-105 transition-all duration-300 group"
-            >
-              <Calendar className="w-4 h-4 group-hover:animate-bounce" />
-              Demo
-            </Button>
+          <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`p-2 rounded-md transition-all duration-300 transform hover:scale-110 ${
@@ -98,16 +91,18 @@ export const Navigation = () => {
             </button>
           </div>
 
-          {/* Desktop CTA Button */}
-          <div className="hidden lg:block">
-            <Button
-              onClick={openDemoEmail}
-              className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg flex items-center gap-2 font-semibold transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group hover:shadow-xl"
-            >
-              <Calendar className="w-4 h-4 group-hover:animate-bounce" />
-              Request Demo
-            </Button>
-          </div>
+          {/* Desktop CTA Button - Only show when scrolled for better UX */}
+          {isScrolled && (
+            <div className="hidden lg:block">
+              <Button
+                onClick={openDemoEmail}
+                className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg flex items-center gap-2 font-semibold transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group hover:shadow-xl"
+              >
+                <Calendar className="w-4 h-4 group-hover:animate-bounce" />
+                Request Demo
+              </Button>
+            </div>
+          )}
         </div>
 
         {/* Mobile Menu */}
@@ -132,6 +127,12 @@ export const Navigation = () => {
                   {item.label}
                 </button>
               ))}
+              <button
+                onClick={openDemoEmail}
+                className="block w-full text-left px-4 py-3 text-[#178ACB] font-semibold hover:bg-[#178ACB]/10 transition-all duration-300 transform hover:translate-x-2 border-t border-gray-200 mt-2"
+              >
+                Request Demo
+              </button>
             </div>
           </div>
         </div>

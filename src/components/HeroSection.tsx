@@ -21,13 +21,6 @@ export const HeroSection = () => {
     }
   };
 
-  const scrollToBenefits = () => {
-    const element = document.getElementById("benefits");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
@@ -63,20 +56,20 @@ export const HeroSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center text-white max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="inline-block animate-fade-in-up">
+            <span className="inline-block">
               {displayText}
               {!isComplete && <span className="typewriter-cursor">|</span>}
             </span>
             <br />
             <span className={`text-[#43B88C] inline-block transition-all duration-1000 ${
-              isComplete ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-4'
+              isComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
               Powered by RAG AI.
             </span>
           </h1>
           
           <p className={`text-xl md:text-2xl mb-8 text-gray-200 transition-all duration-1000 delay-500 ${
-            isComplete ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-4'
+            isComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}>
             Revolutionary Retrieval-Augmented Generation technology transforms complex legislation and case law 
             into verified, actionable insights. Experience AI with an expert legal library and built-in fact-checker 
@@ -84,18 +77,18 @@ export const HeroSection = () => {
           </p>
           
           <div className={`bg-white/10 backdrop-blur-md rounded-lg p-6 mb-8 transition-all duration-1000 delay-700 transform ${
-            isComplete ? 'animate-scale-in opacity-100' : 'opacity-0 scale-95'
+            isComplete ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}>
             <p className="text-lg font-medium mb-2">The RAG Advantage:</p>
             <div className="grid md:grid-cols-3 gap-4 text-sm">
-              <div className="animate-fade-in-left" style={{ animationDelay: '1s' }}>✓ Source-Verified Accuracy</div>
-              <div className="animate-fade-in" style={{ animationDelay: '1.2s' }}>✓ Real-Time Legal Updates</div>
-              <div className="animate-fade-in-right" style={{ animationDelay: '1.4s' }}>✓ Transparent Citations</div>
+              <div className={`transition-all duration-500 ${isComplete ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`} style={{ transitionDelay: '1s' }}>✓ Source-Verified Accuracy</div>
+              <div className={`transition-all duration-500 ${isComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '1.2s' }}>✓ Real-Time Legal Updates</div>
+              <div className={`transition-all duration-500 ${isComplete ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`} style={{ transitionDelay: '1.4s' }}>✓ Transparent Citations</div>
             </div>
           </div>
           
-          <div className={`space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center transition-all duration-1000 delay-1000 ${
-            isComplete ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-4'
+          <div className={`transition-all duration-1000 delay-1000 ${
+            isComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}>
             <EnhancedCTAButton
               variant="demo"
@@ -103,13 +96,6 @@ export const HeroSection = () => {
               stage="decision"
             >
               See RAG in Action - Request Demo
-            </EnhancedCTAButton>
-            <EnhancedCTAButton
-              variant="secondary"
-              onClick={scrollToBenefits}
-              stage="consideration"
-            >
-              Discover RAG Benefits
             </EnhancedCTAButton>
           </div>
         </div>
