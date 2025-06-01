@@ -90,19 +90,23 @@ export const AboutUsSection = () => {
           <div className="flex justify-center">
             <Card className="text-center hover:shadow-lg transition-all duration-300 max-w-md">
               <CardContent className="p-8">
-                <div className="w-24 h-24 bg-gradient-to-r from-[#178ACB] to-[#29A09D] rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white text-2xl font-bold">AP</span>
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                  <img 
+                    src="https://media.licdn.com/dms/image/v2/D4E03AQHai-RpEIvAtQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711726323781?e=1754524800&v=beta&t=G0FWsgUHndoUDpY-Vfq44xU-KzmRFWK9eQDNttFY0b0"
+                    alt="Andre Profitt"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h4 className="text-xl font-bold text-[#0A2F51] mb-2">Andre Profitt</h4>
                 <p className="text-[#178ACB] font-medium mb-3">CEO & Founder</p>
                 <p className="text-[#0E5A8A] text-sm">
-                  Andre Profitt is a highly accomplished business leader with 9 years of experience 
-                  driving significant ARR growth and operational efficiencies through strategic process 
-                  optimization and innovative AI solutions. At SimCorp, he spearheaded contracting for 
-                  deals securing up to $25M ARR and developed proprietary AI solutions delivering 
-                  approximately $450,000 in annual productivity savings. Fueled by a passion for 
-                  cutting-edge technologies like RAG and Azure AI, Andre applies his advanced technical 
-                  skills and data-driven expertise to achieve impactful results for LegisClear.
+                  A dynamic business and technology leader, Andre M. Profitt brings 9 years of expertise 
+                  in igniting ARR growth and engineering operational breakthroughs with AI-driven strategies. 
+                  At SimCorp, he was instrumental in securing deals realizing up to $25M ARR and masterminded 
+                  proprietary AI solutions that delivered approximately $450,000 in annual productivity savings. 
+                  Highly credentialed in Artificial Intelligence, holding certifications from Microsoft and 
+                  NVIDIA and possessing a deep command of technologies including RAG, Andre is passionate about 
+                  architecting transformative, data-centric solutions to drive LegisClear's success.
                 </p>
               </CardContent>
             </Card>
