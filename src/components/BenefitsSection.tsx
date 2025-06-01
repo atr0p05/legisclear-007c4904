@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { DollarSign, Zap, Target, TrendingUp, Shield, Users } from "lucide-react";
+import { EnhancedCTAButton } from "@/components/EnhancedCTAButton";
 
 export const BenefitsSection = () => {
   const benefits = [
@@ -47,6 +48,13 @@ export const BenefitsSection = () => {
       color: "border-[#178ACB]"
     }
   ];
+
+  const scrollToROI = () => {
+    const element = document.getElementById("roi-calculator");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section id="benefits" className="py-20 bg-white">
@@ -124,12 +132,19 @@ export const BenefitsSection = () => {
               of expert legal research with the speed and intelligence of advanced AI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-8 py-3 rounded-lg font-medium transition-colors">
+              <EnhancedCTAButton
+                variant="demo"
+                onClick={scrollToROI}
+                stage="decision"
+              >
                 Request Your RAG Demo
-              </button>
-              <button className="border border-[#178ACB] text-[#178ACB] hover:bg-[#178ACB] hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
+              </EnhancedCTAButton>
+              <EnhancedCTAButton
+                variant="download"
+                stage="consideration"
+              >
                 Download RAG Benefits Guide
-              </button>
+              </EnhancedCTAButton>
             </div>
           </div>
         </div>

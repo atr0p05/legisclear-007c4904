@@ -5,6 +5,9 @@ import { SolutionSection } from "@/components/SolutionSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { TailoredSuccessSection } from "@/components/TailoredSuccessSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { TrustSecuritySection } from "@/components/TrustSecuritySection";
+import { ROICalculator } from "@/components/ROICalculator";
 import { PricingSection } from "@/components/PricingSection";
 import { VisionSection } from "@/components/VisionSection";
 import { Footer } from "@/components/Footer";
@@ -20,6 +23,9 @@ const Index = () => {
       <BenefitsSection />
       <TailoredSuccessSection />
       <HowItWorksSection />
+      <TestimonialsSection />
+      <TrustSecuritySection />
+      <ROICalculator />
       <PricingSection />
       <VisionSection />
       <Footer />

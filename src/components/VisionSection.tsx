@@ -1,7 +1,14 @@
 
-import { Button } from "@/components/ui/button";
+import { EnhancedCTAButton } from "@/components/EnhancedCTAButton";
 
 export const VisionSection = () => {
+  const scrollToROI = () => {
+    const element = document.getElementById("roi-calculator");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="vision" className="py-20 bg-gradient-to-r from-[#0A2F51] via-[#0E5A8A] to-[#178ACB]">
       <div className="container mx-auto px-6 text-center">
@@ -21,19 +28,19 @@ export const VisionSection = () => {
           </p>
           
           <div className="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
-            <Button
-              size="lg"
-              className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-12 py-4 text-lg font-semibold"
+            <EnhancedCTAButton
+              variant="primary"
+              onClick={scrollToROI}
+              stage="decision"
             >
               Request Your RAG Demo
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white text-[#43B88C] hover:bg-white hover:text-[#0A2F51] px-12 py-4 text-lg font-semibold"
+            </EnhancedCTAButton>
+            <EnhancedCTAButton
+              variant="contact"
+              stage="decision"
             >
               Connect with RAG Specialist
-            </Button>
+            </EnhancedCTAButton>
           </div>
 
           <div className="mt-16 grid md:grid-cols-3 gap-8">

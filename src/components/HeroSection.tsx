@@ -1,10 +1,24 @@
 
-import { Button } from "@/components/ui/button";
+import { EnhancedCTAButton } from "@/components/EnhancedCTAButton";
 import { ArrowDown } from "lucide-react";
 
 export const HeroSection = () => {
   const scrollToNext = () => {
     const element = document.getElementById("challenge");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToDemo = () => {
+    const element = document.getElementById("roi-calculator");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToBenefits = () => {
+    const element = document.getElementById("benefits");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -43,21 +57,20 @@ export const HeroSection = () => {
             </div>
           </div>
           <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center animate-fade-in delay-600">
-            <Button
-              onClick={scrollToNext}
-              size="lg"
-              className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-12 py-4 text-lg"
+            <EnhancedCTAButton
+              variant="demo"
+              onClick={scrollToDemo}
+              stage="decision"
             >
               See RAG in Action - Request Demo
-            </Button>
-            <Button
-              onClick={scrollToNext}
-              variant="outline"
-              size="lg"
-              className="border-white text-[#43B88C] hover:bg-white hover:text-[#0A2F51] px-12 py-4 text-lg"
+            </EnhancedCTAButton>
+            <EnhancedCTAButton
+              variant="secondary"
+              onClick={scrollToBenefits}
+              stage="consideration"
             >
               Discover RAG Benefits
-            </Button>
+            </EnhancedCTAButton>
           </div>
         </div>
       </div>
