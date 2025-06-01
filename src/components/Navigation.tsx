@@ -61,16 +61,6 @@ export const Navigation = () => {
               Benefits
             </button>
             <button
-              onClick={() => scrollToSection("success-stories")}
-              className={`transition-colors duration-300 font-medium ${
-                isScrolled 
-                  ? "text-[#0E5A8A] hover:text-[#178ACB]" 
-                  : "text-white/90 hover:text-white drop-shadow-sm"
-              }`}
-            >
-              Success Stories
-            </button>
-            <button
               onClick={() => scrollToSection("pricing")}
               className={`transition-colors duration-300 font-medium ${
                 isScrolled 
