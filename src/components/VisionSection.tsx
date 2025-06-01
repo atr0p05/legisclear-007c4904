@@ -1,3 +1,4 @@
+
 import { EnhancedCTAButton } from "@/components/EnhancedCTAButton";
 
 export const VisionSection = () => {
@@ -14,9 +15,10 @@ export const VisionSection = () => {
             that reduces costs, accelerates research, and delivers measurable ROI through verifiable AI.
           </p>
           <p className="text-lg mb-12 opacity-80">
-            Join the growing community of legal professionals who are leveraging RAG technology to slash administrative overhead by 48%, 
-            accelerate research by 6-80x, and achieve ROI of 840%+ in their first year. Experience the competitive advantage 
-            that comes from instant access to comprehensive, source-verified legal knowledge.
+            Join the growing community of legal professionals leveraging LegisClear's RAG technology. 
+            Experience firsthand how our platform transforms your practice by dramatically slashing administrative overhead, 
+            accelerating research capabilities, and delivering unprecedented ROI—all through instant access 
+            to comprehensive, source-verified legal knowledge.
           </p>
           
           <div className="flex justify-center">
