@@ -82,6 +82,33 @@ export const AboutUsSection = () => {
           </div>
         </div>
 
+        {/* Leadership Team */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-[#0A2F51] mb-8 text-center">
+            Leadership Team
+          </h3>
+          <div className="flex justify-center">
+            <Card className="text-center hover:shadow-lg transition-all duration-300 max-w-md">
+              <CardContent className="p-8">
+                <div className="w-24 h-24 bg-gradient-to-r from-[#178ACB] to-[#29A09D] rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-white text-2xl font-bold">AP</span>
+                </div>
+                <h4 className="text-xl font-bold text-[#0A2F51] mb-2">Andre Profitt</h4>
+                <p className="text-[#178ACB] font-medium mb-3">CEO & Founder</p>
+                <p className="text-[#0E5A8A] text-sm">
+                  Andre Profitt is a highly accomplished business leader with 9 years of experience 
+                  driving significant ARR growth and operational efficiencies through strategic process 
+                  optimization and innovative AI solutions. At SimCorp, he spearheaded contracting for 
+                  deals securing up to $25M ARR and developed proprietary AI solutions delivering 
+                  approximately $450,000 in annual productivity savings. Fueled by a passion for 
+                  cutting-edge technologies like RAG and Azure AI, Andre applies his advanced technical 
+                  skills and data-driven expertise to achieve impactful results for LegisClear.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* Call to Action */}
         <div className="text-center">
           <div className="bg-gradient-to-r from-[#178ACB] to-[#29A09D] p-8 rounded-lg text-white max-w-4xl mx-auto">
