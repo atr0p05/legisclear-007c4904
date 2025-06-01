@@ -78,12 +78,12 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Smooth scroll indicator */}
+      {/* Subtle scroll indicator */}
       <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer group transition-all duration-1000 delay-1500 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`} onClick={scrollToNext}>
-        <div className="p-2 rounded-full bg-white/20 backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300 animate-bounce">
-          <ArrowDown className="w-8 h-8 text-white group-hover:animate-pulse" />
+        <div className="p-2 rounded-full bg-white/20 backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300 animate-gentle-float">
+          <ArrowDown className="w-8 h-8 text-white group-hover:text-white/90 transition-colors duration-300" />
         </div>
       </div>
     </section>
