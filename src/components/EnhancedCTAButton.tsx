@@ -35,13 +35,13 @@ export const EnhancedCTAButton = ({
       case "primary":
         return "bg-[#43B88C] hover:bg-[#29A09D] text-white shadow-lg hover:shadow-xl transform hover:scale-105";
       case "secondary":
-        return "border-2 border-[#178ACB] text-[#178ACB] hover:bg-[#178ACB] hover:text-white";
+        return "border-2 border-[#178ACB] text-[#178ACB] hover:bg-[#178ACB] hover:text-white bg-white";
       case "demo":
         return "bg-[#178ACB] hover:bg-[#0E5A8A] text-white shadow-lg";
       case "contact":
         return "bg-[#29A09D] hover:bg-[#178ACB] text-white shadow-lg";
       case "download":
-        return "bg-white text-[#0A2F51] border border-[#178ACB] hover:bg-[#178ACB] hover:text-white";
+        return "bg-white text-[#0A2F51] border-2 border-[#178ACB] hover:bg-[#178ACB] hover:text-white shadow-md";
       default:
         return "bg-[#43B88C] hover:bg-[#29A09D] text-white";
     }
@@ -52,14 +52,15 @@ export const EnhancedCTAButton = ({
       onClick={onClick}
       className={`
         ${getStyles()}
-        px-8 py-3 rounded-lg font-semibold text-lg
+        px-6 py-3 rounded-lg font-semibold
         transition-all duration-300 ease-in-out
         flex items-center gap-2
         ${className}
       `}
     >
+      {variant === "download" && <Download className="w-4 h-4" />}
       {children}
-      {getIcon()}
+      {variant !== "download" && getIcon()}
     </Button>
   );
 };

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
+import { Calendar } from "lucide-react";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,10 +38,11 @@ export const Navigation = () => {
             }`}
             size={32}
           />
-          <div className="hidden md:flex space-x-6">
+          
+          <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection("solution")}
-              className={`transition-colors duration-300 ${
+              className={`transition-colors duration-300 font-medium ${
                 isScrolled 
                   ? "text-[#0E5A8A] hover:text-[#178ACB]" 
                   : "text-white/90 hover:text-white drop-shadow-sm"
@@ -50,7 +52,7 @@ export const Navigation = () => {
             </button>
             <button
               onClick={() => scrollToSection("benefits")}
-              className={`transition-colors duration-300 ${
+              className={`transition-colors duration-300 font-medium ${
                 isScrolled 
                   ? "text-[#0E5A8A] hover:text-[#178ACB]" 
                   : "text-white/90 hover:text-white drop-shadow-sm"
@@ -60,7 +62,7 @@ export const Navigation = () => {
             </button>
             <button
               onClick={() => scrollToSection("success-stories")}
-              className={`transition-colors duration-300 ${
+              className={`transition-colors duration-300 font-medium ${
                 isScrolled 
                   ? "text-[#0E5A8A] hover:text-[#178ACB]" 
                   : "text-white/90 hover:text-white drop-shadow-sm"
@@ -70,7 +72,7 @@ export const Navigation = () => {
             </button>
             <button
               onClick={() => scrollToSection("pricing")}
-              className={`transition-colors duration-300 ${
+              className={`transition-colors duration-300 font-medium ${
                 isScrolled 
                   ? "text-[#0E5A8A] hover:text-[#178ACB]" 
                   : "text-white/90 hover:text-white drop-shadow-sm"
@@ -80,7 +82,7 @@ export const Navigation = () => {
             </button>
             <button
               onClick={() => scrollToSection("insights-hub")}
-              className={`transition-colors duration-300 ${
+              className={`transition-colors duration-300 font-medium ${
                 isScrolled 
                   ? "text-[#0E5A8A] hover:text-[#178ACB]" 
                   : "text-white/90 hover:text-white drop-shadow-sm"
@@ -90,7 +92,7 @@ export const Navigation = () => {
             </button>
             <button
               onClick={() => scrollToSection("about-us")}
-              className={`transition-colors duration-300 ${
+              className={`transition-colors duration-300 font-medium ${
                 isScrolled 
                   ? "text-[#0E5A8A] hover:text-[#178ACB]" 
                   : "text-white/90 hover:text-white drop-shadow-sm"
@@ -99,11 +101,13 @@ export const Navigation = () => {
               About Us
             </button>
           </div>
+
           <Button
             onClick={() => scrollToSection("roi-calculator")}
-            className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg"
+            className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg flex items-center gap-2 font-semibold"
           >
-            Calculate ROI
+            <Calendar className="w-4 h-4" />
+            Request Demo
           </Button>
         </div>
       </div>
