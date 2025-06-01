@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -35,6 +36,13 @@ export const ROICalculator = () => {
 
   const handleCalculate = () => {
     setShowResults(true);
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -163,7 +171,10 @@ export const ROICalculator = () => {
                     </ul>
                   </div>
 
-                  <Button className="w-full bg-[#178ACB] hover:bg-[#0E5A8A] text-white">
+                  <Button 
+                    onClick={() => scrollToSection("tailored-solutions")}
+                    className="w-full bg-[#178ACB] hover:bg-[#0E5A8A] text-white"
+                  >
                     Discuss Your ROI with RAG Specialist
                   </Button>
                 </CardContent>
@@ -182,10 +193,16 @@ export const ROICalculator = () => {
                 See how LegisClear's RAG technology can deliver these savings and efficiency gains for your practice.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-8 py-3">
+                <Button 
+                  onClick={() => scrollToSection("tailored-solutions")}
+                  className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-8 py-3"
+                >
                   Schedule Your ROI Demo
                 </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#0A2F51] px-8 py-3">
+                <Button 
+                  onClick={() => scrollToSection("about-us")}
+                  className="bg-white text-[#0A2F51] hover:bg-gray-100 px-8 py-3 border-2 border-white"
+                >
                   Download Detailed ROI Report
                 </Button>
               </div>
