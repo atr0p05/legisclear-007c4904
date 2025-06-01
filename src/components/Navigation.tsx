@@ -2,10 +2,11 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
-import { Calendar } from "lucide-react";
+import { Calendar, Menu, X } from "lucide-react";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,8 +20,19 @@ export const Navigation = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      setIsMobileMenuOpen(false); // Close mobile menu after navigation
     }
   };
+
+  const navigationItems = [
+    { label: "The Challenge", sectionId: "challenge" },
+    { label: "Our Solution", sectionId: "solution" },
+    { label: "Benefits", sectionId: "benefits" },
+    { label: "Tailored Solutions", sectionId: "tailored-solutions" },
+    { label: "How It Works", sectionId: "how-it-works" },
+    { label: "Trust & Security", sectionId: "trust-security" },
+    { label: "About Us", sectionId: "about-us" }
+  ];
 
   return (
     <nav
@@ -39,47 +51,74 @@ export const Navigation = () => {
             size={32}
           />
           
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-6">
+            {navigationItems.map((item) => (
+              <button
+                key={item.sectionId}
+                onClick={() => scrollToSection(item.sectionId)}
+                className={`transition-colors duration-300 font-medium text-sm hover:scale-105 transform transition-transform ${
+                  isScrolled 
+                    ? "text-[#0E5A8A] hover:text-[#178ACB]" 
+                    : "text-white/90 hover:text-white drop-shadow-sm"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden flex items-center space-x-4">
+            <Button
+              onClick={() => scrollToSection("roi-calculator")}
+              className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-4 py-2 shadow-lg flex items-center gap-2 font-semibold text-sm"
+            >
+              <Calendar className="w-4 h-4" />
+              Demo
+            </Button>
             <button
-              onClick={() => scrollToSection("solution")}
-              className={`transition-colors duration-300 font-medium ${
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={`p-2 rounded-md transition-colors ${
                 isScrolled 
-                  ? "text-[#0E5A8A] hover:text-[#178ACB]" 
-                  : "text-white/90 hover:text-white drop-shadow-sm"
+                  ? "text-[#0E5A8A] hover:bg-[#178ACB]/10" 
+                  : "text-white hover:bg-white/10"
               }`}
             >
-              RAG Solution
-            </button>
-            <button
-              onClick={() => scrollToSection("benefits")}
-              className={`transition-colors duration-300 font-medium ${
-                isScrolled 
-                  ? "text-[#0E5A8A] hover:text-[#178ACB]" 
-                  : "text-white/90 hover:text-white drop-shadow-sm"
-              }`}
-            >
-              Benefits
-            </button>
-            <button
-              onClick={() => scrollToSection("about-us")}
-              className={`transition-colors duration-300 font-medium ${
-                isScrolled 
-                  ? "text-[#0E5A8A] hover:text-[#178ACB]" 
-                  : "text-white/90 hover:text-white drop-shadow-sm"
-              }`}
-            >
-              About Us
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
-          <Button
-            onClick={() => scrollToSection("roi-calculator")}
-            className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg flex items-center gap-2 font-semibold"
-          >
-            <Calendar className="w-4 h-4" />
-            Request Demo
-          </Button>
+          {/* Desktop CTA Button */}
+          <div className="hidden lg:block">
+            <Button
+              onClick={() => scrollToSection("roi-calculator")}
+              className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg flex items-center gap-2 font-semibold"
+            >
+              <Calendar className="w-4 h-4" />
+              Request Demo
+            </Button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className={`lg:hidden mt-4 rounded-lg shadow-lg ${
+            isScrolled ? "bg-white" : "bg-white/95 backdrop-blur-md"
+          }`}>
+            <div className="py-4 space-y-2">
+              {navigationItems.map((item) => (
+                <button
+                  key={item.sectionId}
+                  onClick={() => scrollToSection(item.sectionId)}
+                  className="block w-full text-left px-4 py-3 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-colors font-medium"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
