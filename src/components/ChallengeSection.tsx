@@ -7,11 +7,12 @@ export const ChallengeSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0A2F51] mb-6">
-            Navigating the Labyrinth of Modern Legal Work
+            The Legal Intelligence Crisis: Why Traditional AI Falls Short
           </h2>
           <p className="text-xl text-[#0E5A8A] max-w-4xl mx-auto">
             Modern legislation and case law have become increasingly complex, while legal professionals 
-            face mounting administrative burdens that consume nearly half their time and earnings.
+            face mounting administrative burdens that consume nearly half their time. Traditional AI solutions 
+            compound these problems with outdated information and unreliable "hallucinations."
           </p>
         </div>
 
@@ -23,31 +24,40 @@ export const ChallengeSection = () => {
             
             <Card className="p-6 border-l-4 border-[#178ACB]">
               <h4 className="text-xl font-semibold text-[#0A2F51] mb-3">
-                Overwhelming Length
+                Overwhelming Volume & Complexity
               </h4>
-              <p className="text-[#0E5A8A]">
+              <p className="text-[#0E5A8A] mb-3">
                 Bills and case law often span hundreds or thousands of pages, making them impossible for 
                 average citizens and even busy professionals to read and understand comprehensively.
+              </p>
+              <p className="text-sm text-[#43B88C] font-medium">
+                RAG Solution Preview: Intelligent document analysis and synthesis from verified sources.
               </p>
             </Card>
 
             <Card className="p-6 border-l-4 border-[#29A09D]">
               <h4 className="text-xl font-semibold text-[#0A2F51] mb-3">
-                Complex Jargon
+                Complex Jargon & Hidden Connections
               </h4>
-              <p className="text-[#0E5A8A]">
-                Legal language and technical terminology create barriers to public understanding 
-                and require extensive expertise to navigate effectively.
+              <p className="text-[#0E5A8A] mb-3">
+                Legal language and technical terminology create barriers, while conflicts and relationships 
+                between different pieces of legislation are often unclear and difficult to identify.
+              </p>
+              <p className="text-sm text-[#43B88C] font-medium">
+                RAG Solution Preview: Cross-referenced insights that reveal hidden legal connections.
               </p>
             </Card>
 
             <Card className="p-6 border-l-4 border-[#43B88C]">
               <h4 className="text-xl font-semibold text-[#0A2F51] mb-3">
-                Hidden Connections
+                Traditional AI Limitations
               </h4>
-              <p className="text-[#0E5A8A]">
-                Conflicts and relationships between different pieces of legislation and case law 
-                are often unclear and difficult to identify without extensive research.
+              <p className="text-[#0E5A8A] mb-3">
+                Generic AI tools risk "hallucinations," provide outdated information, and lack verifiable sources—
+                critical failures for legal professionals who need accuracy and accountability.
+              </p>
+              <p className="text-sm text-[#43B88C] font-medium">
+                RAG Solution Preview: Source-grounded AI that eliminates guesswork with verified citations.
               </p>
             </Card>
           </div>
@@ -55,7 +65,7 @@ export const ChallengeSection = () => {
           <div className="relative">
             <div className="bg-gradient-to-r from-[#178ACB] to-[#29A09D] p-8 rounded-lg text-white mb-6">
               <h3 className="text-2xl font-bold mb-6 text-center">
-                The Growing Complexity
+                The Exponential Growth in Legal Complexity
               </h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
@@ -79,16 +89,28 @@ export const ChallengeSection = () => {
               </p>
             </div>
 
-            <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded">
+            <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded mb-6">
               <h4 className="text-lg font-semibold text-[#0A2F51] mb-3">
-                The Administrative Crisis
+                The Administrative Crisis & AI Trust Gap
               </h4>
               <ul className="space-y-2 text-[#0E5A8A] text-sm">
                 <li>• Legal professionals spend up to <strong>48% of time</strong> on non-billable admin tasks</li>
                 <li>• Law firm overhead can consume <strong>45-50% of earnings</strong></li>
+                <li>• Traditional AI tools risk <strong>hallucinated legal citations</strong> and outdated precedents</li>
+                <li>• Manual verification of AI outputs adds <strong>additional time burden</strong></li>
                 <li>• Document management inefficiencies cost a 20-lawyer firm <strong>over $2.3M annually</strong></li>
-                <li>• Manual data entry error rates reach <strong>up to 4%</strong></li>
               </ul>
+            </div>
+
+            <div className="bg-[#43B88C]/10 border-l-4 border-[#43B88C] p-6 rounded">
+              <h4 className="text-lg font-semibold text-[#0A2F51] mb-3">
+                The RAG Revolution: A Better Way Forward
+              </h4>
+              <p className="text-[#0E5A8A] text-sm">
+                Retrieval-Augmented Generation technology addresses these challenges by combining AI intelligence 
+                with verified legal sources, eliminating hallucinations while providing transparent, 
+                auditable insights that legal professionals can trust and act upon with confidence.
+              </p>
             </div>
           </div>
         </div>

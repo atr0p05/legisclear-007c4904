@@ -7,24 +7,24 @@ export const TailoredSuccessSection = () => {
     {
       icon: <Building className="w-12 h-12 text-[#178ACB]" />,
       title: "Law Firms",
-      subtitle: "RAG-Powered Competitive Advantage",
+      subtitle: "RAG-Powered Competitive Advantage & Profitability",
       painPoints: [
-        "Time-consuming manual research reducing billable hours",
-        "Rising client expectations for faster, more accurate service",
-        "Pressure to reduce costs while maintaining quality",
-        "Risk of missing critical legal precedents or updates"
+        "Intense pressure to maximize billable hours while managing increasing client demands for speed and accuracy",
+        "Rising competition forcing firms to deliver faster, more cost-effective legal services",
+        "Risk of malpractice from research errors or overlooked precedents that could impact case outcomes",
+        "Voluminous case data and complex legal research consuming valuable attorney time"
       ],
       ragSolutions: [
-        "RAG enables 6-80x faster research, dramatically increasing billable hour potential",
-        "Deliver comprehensive legal analysis in minutes, exceeding client expectations",
-        "Reduce research overhead by 48% while improving accuracy with source-verified insights",
-        "Never miss relevant precedents with RAG's comprehensive legal knowledge base"
+        "RAG automates time-consuming research, cutting non-billable time by up to 48% and freeing attorneys for high-value client work",
+        "Deliver RAG-verified answers 6-80x faster with source citations, exceeding client expectations while maintaining premium pricing",
+        "Ground all insights in verifiable sources with audit trails, reducing malpractice risk and building stronger case foundations",
+        "RAG's intelligent synthesis handles vast datasets, enabling comprehensive analysis in minutes rather than days"
       ],
       benefits: [
-        "Average 840% first-year ROI through efficiency gains",
-        "Handle 3x more complex matters with same resources",
-        "Client satisfaction increases with faster, more thorough service",
-        "Competitive edge through advanced RAG technology adoption"
+        "Average 840% first-year ROI through efficiency gains and increased billable hour capacity",
+        "Handle 3x more complex matters with same resources while improving service quality",
+        "Client satisfaction increases with faster, more thorough, verifiable legal service delivery",
+        "Competitive edge through advanced RAG technology adoption and superior research capabilities"
       ],
       color: "border-[#178ACB]",
       bgColor: "bg-[#178ACB]/5"
@@ -32,24 +32,24 @@ export const TailoredSuccessSection = () => {
     {
       icon: <Shield className="w-12 h-12 text-[#29A09D]" />,
       title: "Corporate Legal Departments",
-      subtitle: "RAG for Risk Mitigation & Cost Control",
+      subtitle: "RAG for Strategic Risk Mitigation & Cost Control",
       painPoints: [
-        "Complex compliance requirements across multiple jurisdictions",
-        "High external counsel costs for routine legal questions",
-        "Risk of regulatory non-compliance due to information gaps",
-        "Slow internal legal processes impacting business velocity"
+        "Complex compliance requirements across multiple jurisdictions with ever-changing regulatory landscapes",
+        "High external counsel costs for routine legal questions and due diligence that impact budget allocations",
+        "Risk of regulatory non-compliance due to information gaps or outdated legal analysis",
+        "Pressure to operate at business speed while maintaining legal precision and thoroughness"
       ],
       ragSolutions: [
-        "RAG provides instant access to current regulations across all relevant jurisdictions",
-        "Handle routine legal queries internally with RAG-verified accuracy, reducing external counsel dependency",
-        "Real-time compliance updates through RAG's continuously updated knowledge base",
-        "Accelerate legal processes with instant, comprehensive legal intelligence"
+        "RAG provides instant access to current regulations across all relevant jurisdictions with source-verified accuracy",
+        "Handle routine legal queries internally with RAG-verified precision, reducing external counsel dependency by up to 60%",
+        "Real-time compliance monitoring through RAG's continuously updated legal knowledge base and cross-referencing capabilities",
+        "Accelerate contract reviews, due diligence, and legal processes with instant, comprehensive legal intelligence"
       ],
       benefits: [
-        "Reduce external counsel costs by up to 60%",
-        "Improve compliance confidence with source-verified regulatory insights",
-        "Accelerate business decisions with rapid legal guidance",
-        "Strengthen risk management through comprehensive legal intelligence"
+        "Reduce external counsel costs by up to 60% while improving internal legal capabilities",
+        "Improve compliance confidence with source-verified regulatory insights and audit trails",
+        "Accelerate business decisions with rapid, reliable legal guidance and risk assessments",
+        "Strengthen enterprise risk management through comprehensive, always-current legal intelligence"
       ],
       color: "border-[#29A09D]",
       bgColor: "bg-[#29A09D]/5"
@@ -57,24 +57,24 @@ export const TailoredSuccessSection = () => {
     {
       icon: <GraduationCap className="w-12 h-12 text-[#43B88C]" />,
       title: "Universities & Academic Institutions",
-      subtitle: "RAG for Legal Education & Research Excellence",
+      subtitle: "RAG for Legal Education Excellence & Research Innovation",
       painPoints: [
-        "Students struggle with complex legal research methodologies",
-        "Faculty need current legal examples for curriculum development",
-        "Institutional legal needs require expert-level research capabilities",
-        "Limited access to comprehensive, current legal databases"
+        "Need to prepare students for a technology-driven legal landscape while maintaining academic rigor",
+        "Faculty require advanced tools for large-scale legal research and novel scholarly inquiry",
+        "Institutional legal departments need expert-level research capabilities for compliance and policy matters",
+        "Curriculum must stay current with rapidly evolving legal technology and AI ethics considerations"
       ],
       ragSolutions: [
-        "RAG technology teaches students advanced legal research through AI-assisted learning",
-        "Faculty access comprehensive, current legal examples with full source verification",
-        "Institutional legal team gains expert-level research capabilities through RAG",
-        "Access to continuously updated, comprehensive legal knowledge base"
+        "RAG technology provides hands-on experience with cutting-edge, verifiable AI research methods for next-generation lawyers",
+        "Faculty access comprehensive, source-verified legal databases enabling unprecedented research scope and accuracy",
+        "Institutional legal teams gain expert-level research capabilities through RAG's intelligent analysis and synthesis",
+        "RAG serves as both a powerful research tool and essential pedagogical instrument for teaching modern legal practice"
       ],
       benefits: [
-        "Enhance legal education with cutting-edge RAG technology exposure",
-        "Improve research quality with access to verified, current legal information",
-        "Reduce institutional legal costs while improving service quality",
-        "Position institution as leader in legal technology education"
+        "Enhance legal education with exposure to cutting-edge RAG technology and ethical AI principles",
+        "Improve research quality and output with access to verified, comprehensive legal information",
+        "Reduce institutional legal costs while improving service quality and compliance capabilities",
+        "Position institution as leader in legal technology education and responsible AI use in law"
       ],
       color: "border-[#43B88C]",
       bgColor: "bg-[#43B88C]/5"
@@ -90,7 +90,8 @@ export const TailoredSuccessSection = () => {
           </h2>
           <p className="text-xl text-[#0E5A8A] max-w-3xl mx-auto">
             Discover how RAG technology addresses the unique challenges faced by law firms, 
-            corporate legal departments, and universities with tailored, measurable benefits.
+            corporate legal departments, and universities with tailored, measurable benefits 
+            that transform legal practice and education.
           </p>
         </div>
 
@@ -120,7 +121,7 @@ export const TailoredSuccessSection = () => {
                     <div>
                       <h4 className="text-lg font-semibold text-[#0A2F51] mb-4 flex items-center">
                         <Scale className="w-5 h-5 mr-2 text-red-500" />
-                        Current Challenges
+                        Critical Challenges
                       </h4>
                       <ul className="space-y-3">
                         {market.painPoints.map((pain, painIndex) => (
@@ -164,6 +165,23 @@ export const TailoredSuccessSection = () => {
                       </ul>
                     </div>
                   </div>
+
+                  {/* Segment-Specific CTA */}
+                  <div className="mt-8 text-center">
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <h5 className="text-lg font-semibold text-[#0A2F51] mb-3">
+                        Ready to Transform Your {market.title.slice(0, -1)} with RAG?
+                      </h5>
+                      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                        <button className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                          Schedule {market.title} Demo
+                        </button>
+                        <button className="border border-[#178ACB] text-[#178ACB] hover:bg-[#178ACB] hover:text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                          Download {market.title} Case Study
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
@@ -178,20 +196,21 @@ export const TailoredSuccessSection = () => {
             <div className="grid md:grid-cols-3 gap-6 text-center mb-6">
               <div>
                 <div className="text-3xl font-bold text-[#178ACB] mb-2">6-80x</div>
-                <p className="text-[#0E5A8A] text-sm">Faster than traditional research methods</p>
+                <p className="text-[#0E5A8A] text-sm">Faster than traditional research methods with verified accuracy</p>
               </div>
               <div>
                 <div className="text-3xl font-bold text-[#29A09D] mb-2">99.99%</div>
-                <p className="text-[#0E5A8A] text-sm">Source-verified accuracy rate</p>
+                <p className="text-[#0E5A8A] text-sm">Source-verified accuracy rate with complete audit trails</p>
               </div>
               <div>
                 <div className="text-3xl font-bold text-[#43B88C] mb-2">840%+</div>
-                <p className="text-[#0E5A8A] text-sm">Average first-year ROI</p>
+                <p className="text-[#0E5A8A] text-sm">Average first-year ROI across all legal practice areas</p>
               </div>
             </div>
             <p className="text-[#0E5A8A] text-lg">
               RAG's retrieval-first approach ensures every legal professional gets current, 
-              accurate, and verifiable insights - regardless of their specific practice area or institution type.
+              accurate, and verifiable insights—regardless of their specific practice area, 
+              institution type, or organizational complexity.
             </p>
           </div>
         </div>

@@ -48,7 +48,7 @@ export const HeroSection = () => {
               size="lg"
               className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-12 py-4 text-lg"
             >
-              Experience RAG Demo
+              See RAG in Action - Request Demo
             </Button>
             <Button
               onClick={scrollToNext}
