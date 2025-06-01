@@ -7,13 +7,13 @@ interface UseScrollAnimationOptions {
   rootMargin?: string;
 }
 
-export const useScrollAnimation = ({
+export const useScrollAnimation = <T extends HTMLElement = HTMLDivElement>({
   threshold = 0.1,
   triggerOnce = true,
   rootMargin = '0px'
 }: UseScrollAnimationOptions = {}) => {
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef<HTMLElement | null>(null);
+  const elementRef = useRef<T | null>(null);
 
   useEffect(() => {
     const element = elementRef.current;

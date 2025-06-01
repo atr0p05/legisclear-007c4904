@@ -7,13 +7,13 @@ interface AnimationSequenceOptions {
   triggerOnView?: boolean;
 }
 
-export const useAnimationSequence = (
+export const useAnimationSequence = <T extends HTMLElement = HTMLDivElement>(
   itemCount: number,
   { delay = 0, stagger = 100, triggerOnView = true }: AnimationSequenceOptions = {}
 ) => {
   const [activeIndex, setActiveIndex] = useState(-1);
   const [isTriggered, setIsTriggered] = useState(!triggerOnView);
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<T>(null);
 
   useEffect(() => {
     if (!triggerOnView) return;
@@ -59,7 +59,7 @@ export const useAnimationSequence = (
 
 export const useParallax = (speed: number = 0.5) => {
   const [offset, setOffset] = useState(0);
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {

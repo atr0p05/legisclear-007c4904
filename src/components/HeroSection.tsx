@@ -1,12 +1,18 @@
 
+import React from "react";
 import { EnhancedCTAButton } from "@/components/EnhancedCTAButton";
 import { ArrowDown } from "lucide-react";
-import { useTypeWriter } from "@/hooks/useTypeWriter";
+import { useSimpleTypeWriter } from "@/hooks/useTypeWriter";
 import { useParallax } from "@/hooks/useAnimationSequence";
 
 export const HeroSection = () => {
-  const { displayText, isComplete } = useTypeWriter("Precision Legal Intelligence,", 3000, 1000);
+  const { displayText, isComplete, start } = useSimpleTypeWriter("Precision Legal Intelligence,", 100, 1000);
   const { elementRef: parallaxRef, offset } = useParallax(0.3);
+
+  // Start the typewriter effect when component mounts
+  React.useEffect(() => {
+    start();
+  }, [start]);
 
   const scrollToNext = () => {
     const element = document.getElementById("challenge");
