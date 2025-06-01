@@ -1,30 +1,30 @@
 
 import { Card } from "@/components/ui/card";
-import { ArrowDown, Database, Brain, CheckCircle } from "lucide-react";
+import { ArrowDown, Database, Brain, CheckCircle, Search, Zap, FileText } from "lucide-react";
 
 export const HowItWorksSection = () => {
   const steps = [
     {
       number: "1",
-      title: "Ingest & Index",
-      description: "Continuous processing of vast legal databases",
-      detail: "LegisClear continuously ingests and processes vast amounts of legislation and case law into our secure vector database, ensuring comprehensive coverage of legal precedents and current law",
+      title: "Smart Legal Knowledge Base",
+      description: "Comprehensive, continuously updated legal database",
+      detail: "Our intelligent legal knowledge base continuously ingests and indexes the latest legislation, case law, regulations, and legal precedents. Every document is processed and organized for instant, precise retrieval.",
       color: "bg-[#178ACB]",
       icon: <Database className="w-6 h-6 text-white" />
     },
     {
       number: "2",
-      title: "Understand & Analyze (RAG)",
-      description: "Advanced AI semantic understanding and retrieval",
-      detail: "Ask your question in natural language. Our advanced RAG AI semantically understands your query and retrieves the most relevant information from the depths of legal data with contextual precision",
+      title: "RAG-Powered Retrieval & Analysis",
+      description: "Your question triggers precise legal information retrieval",
+      detail: "Ask your question in natural language. Our RAG system understands legal context and semantically searches our knowledge base to retrieve the most relevant, current information. No guessing - only verified legal sources.",
       color: "bg-[#29A09D]",
-      icon: <Brain className="w-6 h-6 text-white" />
+      icon: <Search className="w-6 h-6 text-white" />
     },
     {
       number: "3",
-      title: "Deliver & Verify",
-      description: "Instant, accurate, and verifiable legal insights",
-      detail: "Receive clear, concise answers, document summaries, and identified connections instantly. All insights are verifiable against source documents, ensuring reliability and accuracy in your legal work",
+      title: "Verified Intelligence Generation",
+      description: "AI creates responses based only on retrieved sources",
+      detail: "Our AI generates clear, comprehensive responses using only the retrieved legal information. Every answer includes full citations and reasoning, ensuring complete transparency and verifiability.",
       color: "bg-[#43B88C]",
       icon: <CheckCircle className="w-6 h-6 text-white" />
     }
@@ -35,12 +35,52 @@ export const HowItWorksSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0A2F51] mb-6">
-            From Complex Data to Clear Decisions in Record Time
+            How RAG Technology Transforms Legal Research
           </h2>
           <p className="text-xl text-[#0E5A8A] max-w-4xl mx-auto">
-            Our streamlined process transforms overwhelming legal research into instant, 
-            actionable insights through advanced AI and comprehensive data processing that works 6-80x faster than traditional methods.
+            Unlike traditional AI that generates responses from static training data, RAG first retrieves 
+            current, verified legal information, then generates intelligent responses. This retrieval-first 
+            approach is why our AI delivers 6-80x faster research with unmatched accuracy.
           </p>
+        </div>
+
+        {/* RAG vs Traditional AI Comparison */}
+        <div className="mb-16 bg-white p-8 rounded-lg shadow-lg border max-w-5xl mx-auto">
+          <h3 className="text-2xl font-bold text-[#0A2F51] text-center mb-8">
+            Traditional AI vs. RAG: The Critical Difference
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-red-600 flex items-center">
+                <Brain className="w-5 h-5 mr-2" />
+                Traditional AI Approach
+              </h4>
+              <div className="bg-red-50 p-4 rounded border-l-4 border-red-400">
+                <ol className="space-y-2 text-sm">
+                  <li>1. User asks question</li>
+                  <li>2. AI generates response from training data</li>
+                  <li>3. No verification against current sources</li>
+                  <li>4. Risk of outdated or incorrect information</li>
+                </ol>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-[#43B88C] flex items-center">
+                <Zap className="w-5 h-5 mr-2" />
+                LegisClear's RAG Approach
+              </h4>
+              <div className="bg-green-50 p-4 rounded border-l-4 border-[#43B88C]">
+                <ol className="space-y-2 text-sm">
+                  <li>1. User asks question</li>
+                  <li>2. RAG retrieves relevant legal sources</li>
+                  <li>3. AI generates response from retrieved sources</li>
+                  <li>4. Response includes citations and verification</li>
+                </ol>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -84,15 +124,30 @@ export const HowItWorksSection = () => {
         <div className="mt-16 text-center">
           <div className="bg-white p-8 rounded-lg shadow-lg border max-w-3xl mx-auto">
             <h3 className="text-xl font-semibold text-[#0A2F51] mb-4">
-              Experience the Power of AI-Driven Legal Intelligence
+              Experience the Power of RAG-Driven Legal Intelligence
             </h3>
             <p className="text-[#0E5A8A] mb-6">
-              Transform your legal practice with technology that understands context, 
-              delivers precision, and saves time on every query. Join firms achieving 840%+ ROI.
+              Join law firms achieving 840%+ ROI with technology that combines the reliability 
+              of expert legal research with the speed and intelligence of advanced AI.
             </p>
             <div className="bg-gradient-to-r from-[#178ACB] to-[#29A09D] text-white p-6 rounded">
-              <p className="font-medium text-lg">Ready to revolutionize your legal workflow?</p>
-              <p className="opacity-90 mt-2">Experience research that's 6-80x faster with RAG-verified accuracy</p>
+              <div className="grid md:grid-cols-3 gap-4 text-center">
+                <div>
+                  <FileText className="w-8 h-8 mx-auto mb-2" />
+                  <p className="font-medium">Source-Verified</p>
+                  <p className="text-sm opacity-90">Every insight backed by legal sources</p>
+                </div>
+                <div>
+                  <Zap className="w-8 h-8 mx-auto mb-2" />
+                  <p className="font-medium">Lightning Fast</p>
+                  <p className="text-sm opacity-90">6-80x faster than traditional research</p>
+                </div>
+                <div>
+                  <CheckCircle className="w-8 h-8 mx-auto mb-2" />
+                  <p className="font-medium">Always Current</p>
+                  <p className="text-sm opacity-90">Real-time legal knowledge updates</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

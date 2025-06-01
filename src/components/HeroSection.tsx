@@ -25,21 +25,30 @@ export const HeroSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center text-white max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            LegisClear: Your AI Advantage in Law.
+            Precision Legal Intelligence,
             <br />
-            <span className="text-[#43B88C]">Reduce Costs. Accelerate Answers.</span>
+            <span className="text-[#43B88C]">Powered by RAG AI.</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 animate-fade-in delay-300">
-            AI-powered legal intelligence transforming legislation and case law into actionable insights. 
-            Slash administrative burdens, get precise answers instantly, and empower your legal practice.
+            Revolutionary Retrieval-Augmented Generation technology transforms complex legislation and case law 
+            into verified, actionable insights. Experience AI with an expert legal library and built-in fact-checker 
+            that delivers 6-80x faster research with unmatched accuracy.
           </p>
+          <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 mb-8 animate-fade-in delay-500">
+            <p className="text-lg font-medium mb-2">The RAG Advantage:</p>
+            <div className="grid md:grid-cols-3 gap-4 text-sm">
+              <div>✓ Source-Verified Accuracy</div>
+              <div>✓ Real-Time Legal Updates</div>
+              <div>✓ Transparent Citations</div>
+            </div>
+          </div>
           <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center animate-fade-in delay-600">
             <Button
               onClick={scrollToNext}
               size="lg"
               className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-12 py-4 text-lg"
             >
-              Request a Demo
+              Experience RAG Demo
             </Button>
             <Button
               onClick={scrollToNext}
@@ -47,7 +56,7 @@ export const HeroSection = () => {
               size="lg"
               className="border-white text-[#43B88C] hover:bg-white hover:text-[#0A2F51] px-12 py-4 text-lg"
             >
-              Explore LegisClear
+              Discover RAG Benefits
             </Button>
           </div>
         </div>
