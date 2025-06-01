@@ -24,6 +24,10 @@ export const Navigation = () => {
     }
   };
 
+  const openDemoEmail = () => {
+    window.location.href = "mailto:andre@legisclear.com?subject=Request for RAG Demo";
+  };
+
   const navigationItems = [
     { label: "The Challenge", sectionId: "challenge" },
     { label: "Our Solution", sectionId: "solution" },
@@ -71,7 +75,7 @@ export const Navigation = () => {
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center space-x-4">
             <Button
-              onClick={() => scrollToSection("roi-calculator")}
+              onClick={openDemoEmail}
               className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-4 py-2 shadow-lg flex items-center gap-2 font-semibold text-sm"
             >
               <Calendar className="w-4 h-4" />
@@ -92,7 +96,7 @@ export const Navigation = () => {
           {/* Desktop CTA Button */}
           <div className="hidden lg:block">
             <Button
-              onClick={() => scrollToSection("roi-calculator")}
+              onClick={openDemoEmail}
               className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg flex items-center gap-2 font-semibold"
             >
               <Calendar className="w-4 h-4" />

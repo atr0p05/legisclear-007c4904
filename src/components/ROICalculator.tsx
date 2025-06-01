@@ -45,6 +45,24 @@ export const ROICalculator = () => {
     }
   };
 
+  const openEmailWithROI = () => {
+    const subject = encodeURIComponent("ROI Consultation Request - LegisClear RAG Demo");
+    const body = encodeURIComponent(`Hello,
+
+I'm interested in discussing the ROI potential of LegisClear's RAG technology for my practice.
+
+Based on my calculation:
+- Current Monthly Cost: $${results.currentMonthlyCost.toLocaleString()}
+- Projected Annual Savings: $${results.annualSavings.toLocaleString()}
+- Estimated ROI: ${results.roiPercentage}%
+
+I would like to schedule a demo to learn more about how RAG technology can benefit my practice.
+
+Best regards`);
+    
+    window.location.href = `mailto:andre@legisclear.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <section id="roi-calculator" className="py-20 bg-gradient-to-br from-[#0A2F51] to-[#178ACB]">
       <div className="container mx-auto px-6">
@@ -172,10 +190,10 @@ export const ROICalculator = () => {
                   </div>
 
                   <Button 
-                    onClick={() => scrollToSection("tailored-solutions")}
+                    onClick={openEmailWithROI}
                     className="w-full bg-[#178ACB] hover:bg-[#0E5A8A] text-white"
                   >
-                    Discuss Your ROI with RAG Specialist
+                    Discuss Your ROI - Request Demo
                   </Button>
                 </CardContent>
               </Card>
@@ -194,13 +212,13 @@ export const ROICalculator = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
-                  onClick={() => scrollToSection("tailored-solutions")}
+                  onClick={openEmailWithROI}
                   className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-8 py-3"
                 >
                   Schedule Your ROI Demo
                 </Button>
                 <Button 
-                  onClick={() => scrollToSection("about-us")}
+                  onClick={() => window.location.href = "mailto:andre@legisclear.com?subject=Request for Detailed ROI Report"}
                   className="bg-white text-[#0A2F51] hover:bg-gray-100 px-8 py-3 border-2 border-white"
                 >
                   Download Detailed ROI Report

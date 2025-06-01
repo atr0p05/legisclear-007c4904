@@ -1,14 +1,6 @@
-
 import { EnhancedCTAButton } from "@/components/EnhancedCTAButton";
 
 export const VisionSection = () => {
-  const scrollToROI = () => {
-    const element = document.getElementById("roi-calculator");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="vision" className="py-20 bg-gradient-to-r from-[#0A2F51] via-[#0E5A8A] to-[#178ACB]">
       <div className="container mx-auto px-6 text-center">
@@ -27,19 +19,13 @@ export const VisionSection = () => {
             that comes from instant access to comprehensive, source-verified legal knowledge.
           </p>
           
-          <div className="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
+          <div className="flex justify-center">
             <EnhancedCTAButton
               variant="primary"
-              onClick={scrollToROI}
+              href="mailto:andre@legisclear.com?subject=Request for RAG Demo"
               stage="decision"
             >
               Request Your RAG Demo
-            </EnhancedCTAButton>
-            <EnhancedCTAButton
-              variant="contact"
-              stage="decision"
-            >
-              Connect with RAG Specialist
             </EnhancedCTAButton>
           </div>
 

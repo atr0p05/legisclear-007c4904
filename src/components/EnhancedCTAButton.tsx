@@ -8,6 +8,7 @@ interface EnhancedCTAButtonProps {
   onClick?: () => void;
   className?: string;
   stage?: "awareness" | "consideration" | "decision";
+  href?: string;
 }
 
 export const EnhancedCTAButton = ({ 
@@ -15,7 +16,8 @@ export const EnhancedCTAButton = ({
   children, 
   onClick, 
   className = "",
-  stage = "consideration"
+  stage = "consideration",
+  href
 }: EnhancedCTAButtonProps) => {
   const getIcon = () => {
     switch (variant) {
@@ -47,9 +49,17 @@ export const EnhancedCTAButton = ({
     }
   };
 
+  const handleClick = () => {
+    if (href) {
+      window.location.href = href;
+    } else if (onClick) {
+      onClick();
+    }
+  };
+
   return (
     <Button
-      onClick={onClick}
+      onClick={handleClick}
       className={`
         ${getStyles()}
         px-6 py-3 rounded-lg font-semibold

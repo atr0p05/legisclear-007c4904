@@ -10,13 +10,6 @@ export const HeroSection = () => {
     }
   };
 
-  const scrollToDemo = () => {
-    const element = document.getElementById("roi-calculator");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const scrollToBenefits = () => {
     const element = document.getElementById("benefits");
     if (element) {
@@ -59,7 +52,7 @@ export const HeroSection = () => {
           <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center animate-fade-in delay-600">
             <EnhancedCTAButton
               variant="demo"
-              onClick={scrollToDemo}
+              href="mailto:andre@legisclear.com?subject=Request for RAG Demo - See RAG in Action"
               stage="decision"
             >
               See RAG in Action - Request Demo
