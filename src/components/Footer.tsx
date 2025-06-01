@@ -24,13 +24,13 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#insights-hub" className="text-gray-300 hover:text-[#43B88C] transition-colors">
-                  Insights Hub
+                <a href="#solution" className="text-gray-300 hover:text-[#43B88C] transition-colors">
+                  RAG Solution
                 </a>
               </li>
               <li>
-                <a href="#success-stories" className="text-gray-300 hover:text-[#43B88C] transition-colors">
-                  Success Stories
+                <a href="#benefits" className="text-gray-300 hover:text-[#43B88C] transition-colors">
+                  Benefits
                 </a>
               </li>
               <li>
