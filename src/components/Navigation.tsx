@@ -37,17 +37,7 @@ export const Navigation = () => {
             }`}
             size={32}
           />
-          <div className="hidden md:flex space-x-8">
-            <button
-              onClick={() => scrollToSection("challenge")}
-              className={`transition-colors duration-300 ${
-                isScrolled 
-                  ? "text-[#0E5A8A] hover:text-[#178ACB]" 
-                  : "text-white/90 hover:text-white drop-shadow-sm"
-              }`}
-            >
-              The Challenge
-            </button>
+          <div className="hidden md:flex space-x-6">
             <button
               onClick={() => scrollToSection("solution")}
               className={`transition-colors duration-300 ${
@@ -56,7 +46,7 @@ export const Navigation = () => {
                   : "text-white/90 hover:text-white drop-shadow-sm"
               }`}
             >
-              Our Solution
+              RAG Solution
             </button>
             <button
               onClick={() => scrollToSection("benefits")}
@@ -69,24 +59,14 @@ export const Navigation = () => {
               Benefits
             </button>
             <button
-              onClick={() => scrollToSection("tailored-success")}
+              onClick={() => scrollToSection("success-stories")}
               className={`transition-colors duration-300 ${
                 isScrolled 
                   ? "text-[#0E5A8A] hover:text-[#178ACB]" 
                   : "text-white/90 hover:text-white drop-shadow-sm"
               }`}
             >
-              Tailored Solutions
-            </button>
-            <button
-              onClick={() => scrollToSection("how-it-works")}
-              className={`transition-colors duration-300 ${
-                isScrolled 
-                  ? "text-[#0E5A8A] hover:text-[#178ACB]" 
-                  : "text-white/90 hover:text-white drop-shadow-sm"
-              }`}
-            >
-              How It Works
+              Success Stories
             </button>
             <button
               onClick={() => scrollToSection("pricing")}
@@ -98,12 +78,32 @@ export const Navigation = () => {
             >
               Pricing
             </button>
+            <button
+              onClick={() => scrollToSection("insights-hub")}
+              className={`transition-colors duration-300 ${
+                isScrolled 
+                  ? "text-[#0E5A8A] hover:text-[#178ACB]" 
+                  : "text-white/90 hover:text-white drop-shadow-sm"
+              }`}
+            >
+              Insights Hub
+            </button>
+            <button
+              onClick={() => scrollToSection("about-us")}
+              className={`transition-colors duration-300 ${
+                isScrolled 
+                  ? "text-[#0E5A8A] hover:text-[#178ACB]" 
+                  : "text-white/90 hover:text-white drop-shadow-sm"
+              }`}
+            >
+              About Us
+            </button>
           </div>
           <Button
-            onClick={() => scrollToSection("vision")}
+            onClick={() => scrollToSection("roi-calculator")}
             className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg"
           >
-            Request Demo
+            Calculate ROI
           </Button>
         </div>
       </div>

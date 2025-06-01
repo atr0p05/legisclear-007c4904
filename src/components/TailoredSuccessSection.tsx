@@ -15,10 +15,10 @@ export const TailoredSuccessSection = () => {
         "Voluminous case data and complex legal research consuming valuable attorney time"
       ],
       ragSolutions: [
-        "RAG automates time-consuming research, cutting non-billable time by up to 48% and freeing attorneys for high-value client work",
-        "Deliver RAG-verified answers 6-80x faster with source citations, exceeding client expectations while maintaining premium pricing",
-        "Ground all insights in verifiable sources with audit trails, reducing malpractice risk and building stronger case foundations",
-        "RAG's intelligent synthesis handles vast datasets, enabling comprehensive analysis in minutes rather than days"
+        "RAG's semantic understanding and retrieval capabilities automate time-consuming research, cutting non-billable time by up to 48% while freeing attorneys for high-value client work through intelligent document analysis and precedent identification",
+        "RAG's source-grounded responses deliver verified answers 6-80x faster with complete case citations and statutory references, exceeding client expectations while maintaining premium pricing through superior accuracy and verifiability",
+        "RAG's core architecture grounds all insights in verifiable sources with complete audit trails: every piece of information links directly to its original document, drastically reducing research errors and mitigating malpractice risk through traceable legal reasoning",
+        "RAG's advanced retrieval technology handles vast legal datasets through semantic search and intelligent synthesis, enabling comprehensive analysis across thousands of cases and statutes in minutes rather than days"
       ],
       benefits: [
         "Average 840% first-year ROI through efficiency gains and increased billable hour capacity",
@@ -40,10 +40,10 @@ export const TailoredSuccessSection = () => {
         "Pressure to operate at business speed while maintaining legal precision and thoroughness"
       ],
       ragSolutions: [
-        "RAG provides instant access to current regulations across all relevant jurisdictions with source-verified accuracy",
-        "Handle routine legal queries internally with RAG-verified precision, reducing external counsel dependency by up to 60%",
-        "Real-time compliance monitoring through RAG's continuously updated legal knowledge base and cross-referencing capabilities",
-        "Accelerate contract reviews, due diligence, and legal processes with instant, comprehensive legal intelligence"
+        "RAG's real-time retrieval system provides instant access to current regulations across all relevant jurisdictions: the technology continuously updates its knowledge base, ensuring legal teams always work with the most recent statutory changes and regulatory updates with source-verified accuracy",
+        "RAG's natural language processing and document analysis capabilities handle routine legal queries internally with expert-level precision, reducing external counsel dependency by up to 60% through intelligent contract review, compliance checking, and policy analysis",
+        "RAG's continuous knowledge updates and cross-referencing capabilities enable real-time compliance monitoring: the system automatically identifies regulatory changes affecting your organization and cross-references them against existing policies and contracts",
+        "RAG's intelligent synthesis accelerates contract reviews, due diligence, and legal processes through automated document analysis, risk identification, and comprehensive legal intelligence that maintains thoroughness while operating at business speed"
       ],
       benefits: [
         "Reduce external counsel costs by up to 60% while improving internal legal capabilities",
@@ -65,10 +65,10 @@ export const TailoredSuccessSection = () => {
         "Curriculum must stay current with rapidly evolving legal technology and AI ethics considerations"
       ],
       ragSolutions: [
-        "RAG technology provides hands-on experience with cutting-edge, verifiable AI research methods for next-generation lawyers",
-        "Faculty access comprehensive, source-verified legal databases enabling unprecedented research scope and accuracy",
-        "Institutional legal teams gain expert-level research capabilities through RAG's intelligent analysis and synthesis",
-        "RAG serves as both a powerful research tool and essential pedagogical instrument for teaching modern legal practice"
+        "RAG's transparent, source-grounded architecture provides hands-on experience with cutting-edge AI research methods: students learn responsible AI use through a system that always shows its sources, teaching both advanced legal research and ethical AI principles essential for next-generation lawyers",
+        "RAG's comprehensive retrieval capabilities and semantic search enable faculty to access unprecedented research scope: the technology can analyze vast legal corpora across jurisdictions and time periods, supporting novel scholarly inquiry with complete source verification and academic citation standards",
+        "RAG's sophisticated analysis and synthesis capabilities provide institutional legal teams with expert-level research power: the platform handles complex regulatory compliance, policy development, and legal risk assessment with the same rigor as top-tier legal counsel",
+        "RAG serves as both a powerful research tool and essential pedagogical instrument: students learn cutting-edge legal technology while faculty demonstrate responsible AI deployment, preparing graduates for a technology-enhanced legal profession"
       ],
       benefits: [
         "Enhance legal education with exposure to cutting-edge RAG technology and ethical AI principles",

@@ -64,9 +64,13 @@ export const PricingSection = () => {
               </ul>
               <div className="bg-gray-50 p-4 rounded mb-6">
                 <p className="text-sm text-[#0A2F51] font-medium mb-2">Fair Usage Policy:</p>
+                <p className="text-sm text-gray-600 mb-2">
+                  Designed for individual professional research needs. Monthly query allowance resets automatically. 
+                  Perfect for solo practitioners, consultants, and individual legal professionals conducting routine research.
+                </p>
                 <p className="text-sm text-gray-600">
-                  Designed for individual research needs. Queries reset monthly. 
-                  Automated or high-volume usage may require Enterprise plan.
+                  Extensive automated use may be reviewed to ensure platform stability for all users. 
+                  For high-volume or organizational use, our Enterprise plan offers unlimited access with dedicated support.
                 </p>
               </div>
               <Button className="w-full bg-[#43B88C] hover:bg-[#29A09D] text-white py-3 flex items-center justify-center gap-2 mt-auto">
@@ -126,9 +130,13 @@ export const PricingSection = () => {
               </ul>
               <div className="bg-blue-50 p-4 rounded mb-6">
                 <p className="text-sm text-[#0A2F51] font-medium mb-2">Enterprise Scalability:</p>
+                <p className="text-sm text-gray-600 mb-2">
+                  Enterprise plans offer generous, scalable thresholds designed for extensive organizational use. 
+                  Our platform handles thousands of queries daily with enterprise-grade performance and reliability.
+                </p>
                 <p className="text-sm text-gray-600">
-                  Designed for extensive organizational use with generous, scalable thresholds. 
-                  Specific usage parameters tailored to your needs will be defined during consultation.
+                  Specific usage parameters tailored to your organization's needs will be defined during your consultation 
+                  to ensure optimal performance, cost-effectiveness, and maximum value for your team.
                 </p>
               </div>
               <Button className="w-full bg-[#178ACB] hover:bg-[#0E5A8A] text-white py-3 flex items-center justify-center gap-2 mt-auto">

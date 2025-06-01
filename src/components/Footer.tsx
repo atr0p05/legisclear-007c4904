@@ -10,14 +10,29 @@ export const Footer = () => {
           <div>
             <Logo className="text-white mb-4" size={36} />
             <p className="text-gray-300">
-              Demystifying legislation for all. Empowering citizens with 
-              AI-powered insights into government bills and laws.
+              LegisClear: RAG-Powered Clarity for the Legal Profession.
+              Empowering legal professionals with verifiable, source-grounded AI intelligence.
             </p>
           </div>
           
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
+              <li>
+                <a href="#about-us" className="text-gray-300 hover:text-[#43B88C] transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#insights-hub" className="text-gray-300 hover:text-[#43B88C] transition-colors">
+                  Insights Hub
+                </a>
+              </li>
+              <li>
+                <a href="#success-stories" className="text-gray-300 hover:text-[#43B88C] transition-colors">
+                  Success Stories
+                </a>
+              </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-[#43B88C] transition-colors">
                   Privacy Policy
@@ -33,18 +48,13 @@ export const Footer = () => {
                   Contact Us
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-[#43B88C] transition-colors">
-                  About
-                </a>
-              </li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-lg font-semibold mb-4">Connect</h4>
             <p className="text-gray-300 mb-4">
-              Stay updated with the latest legislative insights and platform updates.
+              Stay updated with the latest RAG innovations and legal intelligence insights.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -70,7 +80,7 @@ export const Footer = () => {
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2025 LegisClear. All rights reserved. Empowering democracy through clarity.
+            © 2025 LegisClear. All rights reserved. Verifiable Legal Intelligence. Powered by RAG.
           </p>
         </div>
       </div>
