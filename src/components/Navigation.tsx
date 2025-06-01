@@ -3,10 +3,20 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
 import { Calendar, Menu, X } from "lucide-react";
+import { useHeroVisibility } from "@/hooks/useOneTimeAnimation";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { heroRef, isHeroVisible } = useHeroVisibility();
+
+  useEffect(() => {
+    // Set hero ref to the actual hero element
+    const heroElement = document.getElementById('hero');
+    if (heroElement && heroRef.current !== heroElement) {
+      heroRef.current = heroElement;
+    }
+  }, [heroRef]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +47,9 @@ export const Navigation = () => {
     { label: "Trust & Security", sectionId: "trust-security" },
     { label: "About Us", sectionId: "about-us" }
   ];
+
+  // Show demo button only when scrolled AND hero is not visible
+  const showDemoButton = isScrolled && !isHeroVisible;
 
   return (
     <nav
@@ -91,18 +104,18 @@ export const Navigation = () => {
             </button>
           </div>
 
-          {/* Desktop CTA Button - Only show when scrolled for better UX */}
-          {isScrolled && (
-            <div className="hidden lg:block">
-              <Button
-                onClick={openDemoEmail}
-                className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg flex items-center gap-2 font-semibold transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group hover:shadow-xl"
-              >
-                <Calendar className="w-4 h-4 group-hover:animate-bounce" />
-                Request Demo
-              </Button>
-            </div>
-          )}
+          {/* Desktop CTA Button - Only show when hero is not visible */}
+          <div className={`hidden lg:block transition-all duration-500 transform ${
+            showDemoButton ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-4 pointer-events-none'
+          }`}>
+            <Button
+              onClick={openDemoEmail}
+              className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg flex items-center gap-2 font-semibold transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group hover:shadow-xl"
+            >
+              <Calendar className="w-4 h-4 group-hover:animate-bounce" />
+              Request Demo
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

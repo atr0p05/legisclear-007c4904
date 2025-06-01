@@ -1,13 +1,12 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Database, Search, CheckCircle, ArrowRight, Zap } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useAnimationSequence } from "@/hooks/useAnimationSequence";
+import { useOneTimeAnimation } from "@/hooks/useOneTimeAnimation";
 import { useState } from "react";
 
 export const EnhancedHowItWorksSection = () => {
-  const { elementRef: titleRef, isVisible: titleVisible } = useScrollAnimation({ threshold: 0.3 });
-  const { containerRef: stepsRef, activeIndex } = useAnimationSequence(3, { stagger: 600, delay: 300 });
+  const { elementRef: titleRef, isVisible: titleVisible } = useOneTimeAnimation({ threshold: 0.3 });
+  const { elementRef: stepsRef, isVisible: stepsVisible } = useOneTimeAnimation({ threshold: 0.2 });
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
   const steps = [
@@ -57,12 +56,12 @@ export const EnhancedHowItWorksSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16" ref={titleRef}>
           <h2 className={`text-4xl md:text-5xl font-bold text-[#0A2F51] mb-6 transition-all duration-1000 ${
-            titleVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-8'
+            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             How RAG Technology Transforms Legal Research
           </h2>
           <p className={`text-xl text-[#0E5A8A] max-w-4xl mx-auto transition-all duration-1000 delay-300 ${
-            titleVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-8'
+            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             Unlike traditional AI that generates responses from static training data, 
             RAG retrieves and analyzes current legal information in real-time, 
@@ -84,11 +83,11 @@ export const EnhancedHowItWorksSection = () => {
               <div key={index} className="relative z-10">
                 <Card 
                   className={`border-t-4 border-gray-200 hover:shadow-xl transition-all duration-500 group h-full cursor-pointer transform ${
-                    activeIndex >= index ? 'animate-scale-in opacity-100' : 'opacity-0 scale-90'
+                    stepsVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-90 translate-y-8'
                   } ${hoveredStep === index ? 'scale-105 -translate-y-2' : ''}`}
                   onMouseEnter={() => setHoveredStep(index)}
                   onMouseLeave={() => setHoveredStep(null)}
-                  style={{ animationDelay: `${index * 200}ms` }}
+                  style={{ transitionDelay: `${index * 200 + 200}ms` }}
                 >
                   <CardContent className="p-8 text-center h-full flex flex-col">
                     {/* Enhanced Step Number */}
@@ -149,7 +148,7 @@ export const EnhancedHowItWorksSection = () => {
         {/* Enhanced Why RAG is Different */}
         <div className="mt-16 text-center">
           <div className={`bg-gradient-to-r from-[#0A2F51] to-[#0E5A8A] p-8 rounded-lg text-white max-w-4xl mx-auto transform transition-all duration-1000 hover:scale-105 hover:shadow-2xl ${
-            titleVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-8'
+            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`} style={{ animationDelay: '800ms' }}>
             <div className="flex items-center justify-center mb-4">
               <Zap className="w-8 h-8 mr-3 animate-pulse" />

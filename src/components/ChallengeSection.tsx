@@ -1,12 +1,10 @@
-
 import { Card } from "@/components/ui/card";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useAnimationSequence } from "@/hooks/useAnimationSequence";
+import { useOneTimeAnimation } from "@/hooks/useOneTimeAnimation";
 
 export const ChallengeSection = () => {
-  const { elementRef: titleRef, isVisible: titleVisible } = useScrollAnimation({ threshold: 0.3 });
-  const { elementRef: cardsRef, isVisible: cardsVisible } = useScrollAnimation({ threshold: 0.2 });
-  const { containerRef: chartRef, activeIndex } = useAnimationSequence(3, { stagger: 500, delay: 500 });
+  const { elementRef: titleRef, isVisible: titleVisible } = useOneTimeAnimation({ threshold: 0.3 });
+  const { elementRef: cardsRef, isVisible: cardsVisible } = useOneTimeAnimation({ threshold: 0.2 });
+  const { elementRef: chartRef, isVisible: chartVisible } = useOneTimeAnimation({ threshold: 0.4 });
 
   const challengeCards = [
     {
@@ -34,12 +32,12 @@ export const ChallengeSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16" ref={titleRef}>
           <h2 className={`text-4xl md:text-5xl font-bold text-[#0A2F51] mb-6 transition-all duration-1000 ${
-            titleVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-8'
+            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             The Legal Intelligence Crisis: Why Traditional AI Falls Short
           </h2>
           <p className={`text-xl text-[#0E5A8A] max-w-4xl mx-auto transition-all duration-1000 delay-300 ${
-            titleVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-8'
+            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             Modern legislation and case law have become increasingly complex, while legal professionals 
             face mounting administrative burdens that consume nearly half their time. Traditional AI solutions 
@@ -50,7 +48,7 @@ export const ChallengeSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-6" ref={cardsRef}>
             <h3 className={`text-2xl font-bold text-[#0A2F51] mb-6 transition-all duration-1000 ${
-              cardsVisible ? 'animate-fade-in-left opacity-100' : 'opacity-0 -translate-x-8'
+              cardsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}>
               Why Legal Work Has Become Overwhelming
             </h3>
@@ -59,9 +57,9 @@ export const ChallengeSection = () => {
               <Card 
                 key={index}
                 className={`p-6 border-l-4 ${card.borderColor} transform transition-all duration-1000 hover:scale-105 hover:shadow-lg ${
-                  cardsVisible ? 'animate-fade-in-left opacity-100' : 'opacity-0 -translate-x-8'
+                  cardsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
                 }`}
-                style={{ animationDelay: `${index * 200 + 200}ms` }}
+                style={{ transitionDelay: `${index * 200 + 200}ms` }}
               >
                 <h4 className="text-xl font-semibold text-[#0A2F51] mb-3">
                   {card.title}
@@ -77,32 +75,32 @@ export const ChallengeSection = () => {
           </div>
 
           <div className="relative">
-            <div className={`bg-gradient-to-r from-[#178ACB] to-[#29A09D] p-8 rounded-lg text-white mb-6 transform transition-all duration-1000 ${
-              cardsVisible ? 'animate-fade-in-right opacity-100' : 'opacity-0 translate-x-8'
-            }`} style={{ animationDelay: '400ms' }}>
+            <div className={`bg-gradient-to-r from-[#178ACB] to-[#29A09D] p-8 rounded-lg text-white mb-6 transform transition-all duration-1000 hover:scale-105 hover:shadow-xl ${
+              cardsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+            }`} style={{ transitionDelay: '400ms' }}>
               <h3 className="text-2xl font-bold mb-6 text-center">
                 The Exponential Growth in Legal Complexity
               </h3>
               <div className="space-y-4" ref={chartRef}>
-                <div className={`flex justify-between items-center transition-all duration-500 ${
-                  activeIndex >= 0 ? 'opacity-100 transform-none' : 'opacity-0 translate-x-4'
-                }`}>
+                <div className={`flex justify-between items-center transition-all duration-1000 ${
+                  chartVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-x-4'
+                }`} style={{ transitionDelay: '600ms' }}>
                   <span>1970s Bills</span>
-                  <div className="w-12 h-4 bg-white rounded transform transition-all duration-500"></div>
+                  <div className="w-12 h-4 bg-white rounded transition-all duration-1000"></div>
                   <span className="text-sm">~50 pages</span>
                 </div>
-                <div className={`flex justify-between items-center transition-all duration-500 ${
-                  activeIndex >= 1 ? 'opacity-100 transform-none' : 'opacity-0 translate-x-4'
-                }`}>
+                <div className={`flex justify-between items-center transition-all duration-1000 ${
+                  chartVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-x-4'
+                }`} style={{ transitionDelay: '800ms' }}>
                   <span>1990s Bills</span>
-                  <div className="w-20 h-4 bg-white rounded transform transition-all duration-500"></div>
+                  <div className="w-20 h-4 bg-white rounded transition-all duration-1000"></div>
                   <span className="text-sm">~150 pages</span>
                 </div>
-                <div className={`flex justify-between items-center transition-all duration-500 ${
-                  activeIndex >= 2 ? 'opacity-100 transform-none' : 'opacity-0 translate-x-4'
-                }`}>
+                <div className={`flex justify-between items-center transition-all duration-1000 ${
+                  chartVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-x-4'
+                }`} style={{ transitionDelay: '1000ms' }}>
                   <span>2020s Bills</span>
-                  <div className="w-32 h-4 bg-white rounded transform transition-all duration-500"></div>
+                  <div className="w-32 h-4 bg-white rounded transition-all duration-1000"></div>
                   <span className="text-sm">~500+ pages</span>
                 </div>
               </div>
@@ -112,7 +110,7 @@ export const ChallengeSection = () => {
             </div>
 
             <div className={`bg-red-50 border-l-4 border-red-400 p-6 rounded mb-6 transform transition-all duration-1000 hover:shadow-lg ${
-              cardsVisible ? 'animate-fade-in-right opacity-100' : 'opacity-0 translate-x-8'
+              cardsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
             }`} style={{ animationDelay: '600ms' }}>
               <h4 className="text-lg font-semibold text-[#0A2F51] mb-3">
                 The Administrative Crisis & AI Trust Gap
@@ -127,7 +125,7 @@ export const ChallengeSection = () => {
             </div>
 
             <div className={`bg-[#43B88C]/10 border-l-4 border-[#43B88C] p-6 rounded transform transition-all duration-1000 hover:shadow-lg ${
-              cardsVisible ? 'animate-fade-in-right opacity-100' : 'opacity-0 translate-x-8'
+              cardsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
             }`} style={{ animationDelay: '800ms' }}>
               <h4 className="text-lg font-semibold text-[#0A2F51] mb-3">
                 The RAG Revolution: A Better Way Forward

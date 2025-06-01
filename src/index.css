@@ -92,36 +92,27 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer utilities {
   /* Animation utilities with reduced motion support */
   @media (prefers-reduced-motion: reduce) {
-    .animate-fade-in,
-    .animate-fade-in-up,
-    .animate-fade-in-left,
-    .animate-fade-in-right,
-    .animate-scale-in,
-    .animate-slide-in-right,
-    .animate-slide-in-up,
-    .animate-slide-in-down,
-    .animate-count-up,
-    .animate-pulse-glow,
-    .animate-float,
-    .animate-shimmer,
-    .animate-enter,
-    .animate-stagger-1,
-    .animate-stagger-2,
-    .animate-stagger-3,
-    .animate-stagger-4,
-    .animate-stagger-5 {
-      animation: none !important;
-      opacity: 1 !important;
-      transform: none !important;
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
   }
 
-  /* Hover utilities */
+  /* Professional hover utilities */
   .hover-lift {
     @apply transition-all duration-300 ease-in-out;
   }
@@ -148,38 +139,27 @@
     @apply bg-gradient-to-r from-[#178ACB] to-[#43B88C] bg-clip-text text-transparent;
   }
 
-  /* Shimmer effect for loading states */
-  .shimmer {
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.4),
-      transparent
-    );
-    background-size: 200% 100%;
-    @apply animate-shimmer;
+  /* Professional text shadow for hero */
+  .text-shadow-lg {
+    text-shadow: 0 0 20px rgba(67, 184, 140, 0.5);
   }
 
-  /* Stagger animation delays */
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
-  .stagger-5 { animation-delay: 0.5s; }
-  .stagger-6 { animation-delay: 0.6s; }
+  /* Enhanced button styles */
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#178ACB] to-[#29A09D] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 transform;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-[#178ACB] text-[#178ACB] bg-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-[#178ACB] hover:text-white hover:shadow-lg;
+  }
 }
 
-/* Typewriter cursor animation */
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+/* Remove any unwanted default animations */
+* {
+  box-sizing: border-box;
 }
 
-.typewriter-cursor {
-  animation: blink 1s infinite;
-}
-
-/* Custom scrollbar for better UX */
+/* Professional scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -195,4 +175,11 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #0E5A8A;
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #178ACB;
+  outline-offset: 2px;
 }
