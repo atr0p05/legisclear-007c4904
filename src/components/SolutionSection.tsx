@@ -86,7 +86,7 @@ export const SolutionSection = () => {
                   <div className="w-2 h-2 bg-[#29A09D] rounded-full mt-2"></div>
                   <div>
                     <p className="text-[#0A2F51] font-medium">ROI Impact: 260%+ monthly</p>
-                    <p className="text-[#0E5A8A] text-sm">Some firms report >840% first-year ROI</p>
+                    <p className="text-[#0E5A8A] text-sm">Some firms report {'>'}840% first-year ROI</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
