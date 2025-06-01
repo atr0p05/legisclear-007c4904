@@ -20,7 +20,7 @@ export const Navigation = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false); // Close mobile menu after navigation
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -40,16 +40,16 @@ export const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
+          ? "bg-white/95 backdrop-blur-md shadow-lg transform translate-y-0"
           : "bg-white/20 backdrop-blur-sm border-b border-white/20"
       }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <Logo 
-            className={`transition-colors duration-300 ${
+            className={`transition-all duration-300 transform hover:scale-105 ${
               isScrolled ? "text-[#0A2F51]" : "text-white drop-shadow-md"
             }`}
             size={32}
@@ -57,17 +57,19 @@ export const Navigation = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6">
-            {navigationItems.map((item) => (
+            {navigationItems.map((item, index) => (
               <button
                 key={item.sectionId}
                 onClick={() => scrollToSection(item.sectionId)}
-                className={`transition-colors duration-300 font-medium text-sm hover:scale-105 transform transition-transform ${
+                className={`relative transition-all duration-300 font-medium text-sm hover:scale-105 transform group ${
                   isScrolled 
                     ? "text-[#0E5A8A] hover:text-[#178ACB]" 
                     : "text-white/90 hover:text-white drop-shadow-sm"
                 }`}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
           </div>
@@ -76,20 +78,23 @@ export const Navigation = () => {
           <div className="lg:hidden flex items-center space-x-4">
             <Button
               onClick={openDemoEmail}
-              className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-4 py-2 shadow-lg flex items-center gap-2 font-semibold text-sm"
+              className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-4 py-2 shadow-lg flex items-center gap-2 font-semibold text-sm transform hover:scale-105 transition-all duration-300 group"
             >
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-4 h-4 group-hover:animate-bounce" />
               Demo
             </Button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 rounded-md transition-colors ${
+              className={`p-2 rounded-md transition-all duration-300 transform hover:scale-110 ${
                 isScrolled 
                   ? "text-[#0E5A8A] hover:bg-[#178ACB]/10" 
                   : "text-white hover:bg-white/10"
               }`}
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <div className="relative">
+                <Menu className={`w-6 h-6 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0 rotate-180' : 'opacity-100 rotate-0'}`} />
+                <X className={`w-6 h-6 absolute top-0 left-0 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-180'}`} />
+              </div>
             </button>
           </div>
 
@@ -97,32 +102,39 @@ export const Navigation = () => {
           <div className="hidden lg:block">
             <Button
               onClick={openDemoEmail}
-              className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg flex items-center gap-2 font-semibold"
+              className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg flex items-center gap-2 font-semibold transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group hover:shadow-xl"
             >
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-4 h-4 group-hover:animate-bounce" />
               Request Demo
             </Button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className={`lg:hidden mt-4 rounded-lg shadow-lg ${
+        <div className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+          isMobileMenuOpen ? 'max-h-96 mt-4' : 'max-h-0 mt-0'
+        }`}>
+          <div className={`rounded-lg shadow-lg transition-all duration-300 ${
             isScrolled ? "bg-white" : "bg-white/95 backdrop-blur-md"
           }`}>
             <div className="py-4 space-y-2">
-              {navigationItems.map((item) => (
+              {navigationItems.map((item, index) => (
                 <button
                   key={item.sectionId}
                   onClick={() => scrollToSection(item.sectionId)}
-                  className="block w-full text-left px-4 py-3 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-colors font-medium"
+                  className="block w-full text-left px-4 py-3 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-all duration-300 font-medium transform hover:translate-x-2"
+                  style={{ 
+                    animationDelay: `${index * 50}ms`,
+                    opacity: isMobileMenuOpen ? 1 : 0,
+                    transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(-10px)'
+                  }}
                 >
                   {item.label}
                 </button>
               ))}
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
