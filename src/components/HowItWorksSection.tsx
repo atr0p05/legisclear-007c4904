@@ -1,29 +1,32 @@
 
 import { Card } from "@/components/ui/card";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Database, Brain, CheckCircle } from "lucide-react";
 
 export const HowItWorksSection = () => {
   const steps = [
     {
       number: "1",
-      title: "Ingest",
-      description: "New legislation enters our system",
-      detail: "Bills and legal documents are automatically processed and indexed",
-      color: "bg-[#178ACB]"
+      title: "Ingest & Index",
+      description: "Continuous processing of vast legal databases",
+      detail: "LegisClear continuously ingests and processes legislation and case law into our secure vector database",
+      color: "bg-[#178ACB]",
+      icon: <Database className="w-6 h-6 text-white" />
     },
     {
       number: "2",
-      title: "Analyze (RAG)",
-      description: "AI intelligently processes and connects information",
-      detail: "Our RAG technology identifies patterns, relationships, and potential conflicts",
-      color: "bg-[#29A09D]"
+      title: "Understand & Analyze (RAG)",
+      description: "Advanced AI semantic understanding and retrieval",
+      detail: "Ask your question in natural language. Our RAG AI semantically understands your query and retrieves the most relevant information",
+      color: "bg-[#29A09D]",
+      icon: <Brain className="w-6 h-6 text-white" />
     },
     {
       number: "3",
-      title: "Reveal",
-      description: "Get instant answers, deep insights, and clear relationships",
-      detail: "Access simplified summaries, impact analysis, and actionable insights",
-      color: "bg-[#43B88C]"
+      title: "Deliver & Verify",
+      description: "Instant, accurate, and verifiable legal insights",
+      detail: "Receive clear answers, document summaries, and identified connections instantly. All insights are verifiable against source documents",
+      color: "bg-[#43B88C]",
+      icon: <CheckCircle className="w-6 h-6 text-white" />
     }
   ];
 
@@ -32,11 +35,11 @@ export const HowItWorksSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0A2F51] mb-6">
-            The LegisClear Journey: From Bill to Brilliance
+            Data to Decision in Record Time
           </h2>
           <p className="text-xl text-[#0E5A8A] max-w-3xl mx-auto">
-            Our streamlined process transforms complex legislation into clear, 
-            actionable insights in three simple steps.
+            Our streamlined process transforms complex legal research into instant, 
+            actionable insights through advanced AI and comprehensive data processing.
           </p>
         </div>
 
@@ -46,14 +49,19 @@ export const HowItWorksSection = () => {
               <div key={index} className="relative">
                 <Card className="p-8 hover:shadow-lg transition-shadow duration-300">
                   <div className="flex items-start space-x-6">
-                    <div className={`w-16 h-16 ${step.color} rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0`}>
-                      {step.number}
+                    <div className={`w-16 h-16 ${step.color} rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 relative`}>
+                      <span className="absolute inset-0 flex items-center justify-center text-xl">
+                        {step.number}
+                      </span>
+                      <div className="absolute -bottom-1 -right-1">
+                        {step.icon}
+                      </div>
                     </div>
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-[#0A2F51] mb-3">
                         {step.title}
                       </h3>
-                      <p className="text-lg text-[#0E5A8A] mb-2">
+                      <p className="text-lg text-[#0E5A8A] mb-2 font-medium">
                         {step.description}
                       </p>
                       <p className="text-[#0E5A8A] opacity-80">
@@ -76,14 +84,14 @@ export const HowItWorksSection = () => {
         <div className="mt-16 text-center">
           <div className="bg-white p-8 rounded-lg shadow-lg border max-w-2xl mx-auto">
             <h3 className="text-xl font-semibold text-[#0A2F51] mb-4">
-              Experience the Power of AI-Driven Analysis
+              Experience the Power of AI-Driven Legal Intelligence
             </h3>
             <p className="text-[#0E5A8A] mb-6">
-              See how complex legislation becomes clear, actionable insights with LegisClear's 
-              advanced RAG technology.
+              Transform your legal practice with technology that understands context, 
+              delivers precision, and saves time on every query.
             </p>
             <div className="bg-gradient-to-r from-[#178ACB] to-[#29A09D] text-white p-4 rounded text-center">
-              <p className="font-medium">Ready to explore? Try our platform today.</p>
+              <p className="font-medium">Ready to revolutionize your legal workflow?</p>
             </div>
           </div>
         </div>

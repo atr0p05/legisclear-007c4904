@@ -1,38 +1,44 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Lightbulb, Shield, ArrowUp } from "lucide-react";
+import { DollarSign, Zap, Target, TrendingUp, Shield, Users } from "lucide-react";
 
 export const BenefitsSection = () => {
   const benefits = [
     {
-      icon: <Lightbulb className="w-8 h-8 text-[#43B88C]" />,
-      title: "Unparalleled Accessibility",
-      description: "Complex legal language translated into plain English",
+      icon: <DollarSign className="w-8 h-8 text-[#43B88C]" />,
+      title: "Reduce Administrative Overhead",
+      description: "Slash hours spent on non-billable tasks. AI performs tasks 6-80x faster, significantly cutting operational costs.",
       color: "border-[#43B88C]"
     },
     {
-      icon: <Shield className="w-8 h-8 text-[#178ACB]" />,
-      title: "Deep Insights",
-      description: "Uncover hidden impacts, connections, and conflicts",
+      icon: <Zap className="w-8 h-8 text-[#178ACB]" />,
+      title: "Accelerate Legal Research",
+      description: "Instantly access and analyze legislation and case law. Get answers in minutes, not days.",
       color: "border-[#178ACB]"
     },
     {
-      icon: <ArrowUp className="w-8 h-8 text-[#29A09D]" />,
-      title: "Enhanced Transparency",
-      description: "Gain clear, unbiased understanding of laws",
+      icon: <Target className="w-8 h-8 text-[#29A09D]" />,
+      title: "Enhance Accuracy & Mitigate Risk",
+      description: "Minimize human error with AI-driven precision (up to 99.99% accuracy) and RAG-verified insights.",
       color: "border-[#29A09D]"
     },
     {
-      icon: <Lightbulb className="w-8 h-8 text-[#0E5A8A]" />,
-      title: "Informed Decisions",
-      description: "Empower yourself with actionable knowledge",
+      icon: <TrendingUp className="w-8 h-8 text-[#0E5A8A]" />,
+      title: "Boost Productivity & Profitability",
+      description: "Free up valuable professional time for billable work. Experience significant ROI (firms reporting >840% first-year ROI).",
       color: "border-[#0E5A8A]"
     },
     {
       icon: <Shield className="w-8 h-8 text-[#43B88C]" />,
-      title: "Time Savings",
-      description: "Quickly grasp what matters most, without hours of research",
+      title: "Empower Data-Driven Decisions",
+      description: "Leverage comprehensive legal intelligence for stronger arguments, better compliance, and informed strategies.",
       color: "border-[#43B88C]"
+    },
+    {
+      icon: <Users className="w-8 h-8 text-[#178ACB]" />,
+      title: "Streamline Paralegal Workflows",
+      description: "Automate routine research, document summarization, and information extraction typically handled by paralegals.",
+      color: "border-[#178ACB]"
     }
   ];
 
@@ -41,11 +47,11 @@ export const BenefitsSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0A2F51] mb-6">
-            Transforming Understanding, Empowering You
+            Unlock Efficiency, Accuracy, and Strategic Advantage
           </h2>
           <p className="text-xl text-[#0E5A8A] max-w-3xl mx-auto">
-            LegisClear provides the tools and insights you need to stay informed 
-            and engaged in the democratic process.
+            LegisClear delivers tangible benefits that transform your practice, 
+            reduce costs, and position you at the forefront of legal innovation.
           </p>
         </div>
 
@@ -73,10 +79,11 @@ export const BenefitsSection = () => {
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-[#178ACB] to-[#29A09D] p-8 rounded-lg text-white max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">
-              Join Thousands of Informed Citizens
+              Join the Legal Technology Revolution
             </h3>
             <p className="text-lg opacity-90">
-              Be part of a community that values transparency, understanding, and active participation in democracy.
+              The Legal Technology Market is projected to reach $60.04 billion by 2032. 
+              Position your practice at the forefront of this transformation with LegisClear.
             </p>
           </div>
         </div>

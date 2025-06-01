@@ -25,13 +25,13 @@ export const HeroSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center text-white max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Unravel the Law.
+            Your AI Advantage in Law.
             <br />
-            <span className="text-[#43B88C]">Understand Your Future.</span>
+            <span className="text-[#43B88C]">Reduce Costs. Accelerate Answers.</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 animate-fade-in delay-300">
-            Leveraging AI to transform complex government bills into understandable, 
-            actionable insights for every citizen.
+            AI-powered legal intelligence transforming legislation and case law into actionable insights. 
+            Slash administrative burdens, get precise answers instantly, and empower your legal practice.
           </p>
           <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center animate-fade-in delay-600">
             <Button
@@ -39,7 +39,7 @@ export const HeroSection = () => {
               size="lg"
               className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-8 py-4 text-lg"
             >
-              Explore the Platform
+              Explore LegisClear
             </Button>
             <Button
               onClick={scrollToNext}
@@ -47,7 +47,7 @@ export const HeroSection = () => {
               size="lg"
               className="border-white text-[#43B88C] hover:bg-white hover:text-[#0A2F51] px-8 py-4 text-lg"
             >
-              Learn More
+              Discover AI Efficiency
             </Button>
           </div>
         </div>
