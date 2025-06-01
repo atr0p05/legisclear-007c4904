@@ -23,9 +23,9 @@ export const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center text-white max-w-4xl mx-auto">
+        <div className="text-center text-white max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Your AI Advantage in Law.
+            LegisClear: Your AI Advantage in Law.
             <br />
             <span className="text-[#43B88C]">Reduce Costs. Accelerate Answers.</span>
           </h1>
@@ -37,17 +37,17 @@ export const HeroSection = () => {
             <Button
               onClick={scrollToNext}
               size="lg"
-              className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-8 py-4 text-lg"
+              className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-12 py-4 text-lg"
             >
-              Explore LegisClear
+              Request a Demo
             </Button>
             <Button
               onClick={scrollToNext}
               variant="outline"
               size="lg"
-              className="border-white text-[#43B88C] hover:bg-white hover:text-[#0A2F51] px-8 py-4 text-lg"
+              className="border-white text-[#43B88C] hover:bg-white hover:text-[#0A2F51] px-12 py-4 text-lg"
             >
-              Discover AI Efficiency
+              Explore LegisClear
             </Button>
           </div>
         </div>

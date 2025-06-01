@@ -76,7 +76,7 @@ export const Navigation = () => {
                   : "text-white/90 hover:text-white drop-shadow-sm"
               }`}
             >
-              Solutions
+              Tailored Solutions
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}
@@ -103,7 +103,7 @@ export const Navigation = () => {
             onClick={() => scrollToSection("vision")}
             className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg"
           >
-            Get Started
+            Request Demo
           </Button>
         </div>
       </div>

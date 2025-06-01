@@ -1,6 +1,6 @@
 
 import { Card } from "@/components/ui/card";
-import { Lightbulb, Shield, ArrowDown, Database, Zap, CheckCircle } from "lucide-react";
+import { MessageSquare, Share2, FileText, Zap, Database, CheckCircle } from "lucide-react";
 
 export const SolutionSection = () => {
   return (
@@ -8,24 +8,105 @@ export const SolutionSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0A2F51] mb-6">
-            The LegisClear Advantage: Precision, Speed, and Insight
+            LegisClear: AI-Powered Clarity & Efficiency for the Legal Sector
           </h2>
-          <p className="text-xl text-[#0E5A8A] max-w-3xl mx-auto">
-            LegisClear harnesses a vast vector database of legislation and case law, 
-            utilizing advanced Retrieval-Augmented Generation (RAG) to streamline paralegal-like 
-            research and provide instant, verifiable answers.
+          <p className="text-xl text-[#0E5A8A] max-w-4xl mx-auto">
+            Our advanced RAG AI platform transforms complex legislation and case law into clear, 
+            actionable insights, streamlining workflows and reducing overhead by up to 80%.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        {/* How LegisClear Works */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold text-[#0A2F51] text-center mb-4">
+            How LegisClear Works
+          </h3>
+          <p className="text-lg text-[#0E5A8A] text-center mb-12 max-w-4xl mx-auto">
+            At a high level, LegisClear ingests complex legal documents (legislation and case law), 
+            processes them with our advanced RAG (Retrieval-Augmented Generation) technology, 
+            and provides clear, comprehensive insights.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <Card className="p-6 flex items-start space-x-4">
+                <div className="w-10 h-10 bg-[#178ACB] rounded-full flex items-center justify-center flex-shrink-0">
+                  <MessageSquare className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-[#0A2F51] mb-2">Natural Language Questions</h4>
+                  <p className="text-[#0E5A8A]">Ask questions in plain English about legislation and case law</p>
+                </div>
+              </Card>
+
+              <Card className="p-6 flex items-start space-x-4">
+                <div className="w-10 h-10 bg-[#29A09D] rounded-full flex items-center justify-center flex-shrink-0">
+                  <Share2 className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-[#0A2F51] mb-2">Uncover Connections</h4>
+                  <p className="text-[#0E5A8A]">Identify conflicts, relationships, and precedents across a vast legal dataset</p>
+                </div>
+              </Card>
+
+              <Card className="p-6 flex items-start space-x-4">
+                <div className="w-10 h-10 bg-[#43B88C] rounded-full flex items-center justify-center flex-shrink-0">
+                  <FileText className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-[#0A2F51] mb-2">Simplified Analysis</h4>
+                  <p className="text-[#0E5A8A]">Get clear summaries, key impact identification, and actionable insights</p>
+                </div>
+              </Card>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-lg border">
+              <h4 className="text-xl font-semibold text-[#0A2F51] mb-4">
+                Example Query
+              </h4>
+              <div className="bg-gray-50 p-4 rounded border-l-4 border-[#178ACB] mb-6">
+                <p className="text-[#0E5A8A] italic">
+                  "Summarize recent appellate court rulings relevant to data privacy in SaaS contracts."
+                </p>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-5 h-5 text-[#43B88C]" />
+                  <div>
+                    <p className="text-[#0A2F51] font-medium">Key Rulings Identified</p>
+                    <p className="text-[#0E5A8A] text-sm">Relevant case precedents and statutory references</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-5 h-5 text-[#29A09D]" />
+                  <div>
+                    <p className="text-[#0A2F51] font-medium">Impact on Contractual Obligations</p>
+                    <p className="text-[#0E5A8A] text-sm">Clear explanation of real-world consequences</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-5 h-5 text-[#178ACB]" />
+                  <div>
+                    <p className="text-[#0A2F51] font-medium">Risk Mitigation Checklist</p>
+                    <p className="text-[#0E5A8A] text-sm">Actionable steps for compliance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* RAG Technology Deep Dive */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-[#0A2F51]">
-              Revolutionary AI-Powered Legal Intelligence
+              Revolutionary RAG Technology & Vector Database
             </h3>
             <p className="text-[#0E5A8A] text-lg">
-              Imagine reducing research for a complex tax opinion from 12 hours to just 3.5, 
-              or drafting standard agreements up to 77% faster. LegisClear's RAG technology 
-              ensures these gains come with verifiable accuracy, grounding every insight in source documents.
+              Our vast vector database and RAG technology ensure precision, contextual understanding, 
+              and verifiable results. Experience research that's 6-80x faster than traditional methods 
+              with up to 99.99% accuracy in automated processes.
             </p>
             
             <div className="space-y-4">
