@@ -82,44 +82,6 @@ export const AboutUsSection = () => {
           </div>
         </div>
 
-        {/* Leadership Team */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-[#0A2F51] mb-8 text-center">
-            Leadership Team
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="text-center hover:shadow-lg transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="w-24 h-24 bg-gradient-to-r from-[#178ACB] to-[#29A09D] rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white text-2xl font-bold">SA</span>
-                </div>
-                <h4 className="text-xl font-bold text-[#0A2F51] mb-2">Sarah Anderson</h4>
-                <p className="text-[#178ACB] font-medium mb-3">CEO & Co-Founder</p>
-                <p className="text-[#0E5A8A] text-sm">
-                  Former Big Law partner with 15+ years in corporate law. 
-                  Pioneered the application of RAG technology in legal research 
-                  and led the development of LegisClear's core platform.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center hover:shadow-lg transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="w-24 h-24 bg-gradient-to-r from-[#29A09D] to-[#43B88C] rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white text-2xl font-bold">MC</span>
-                </div>
-                <h4 className="text-xl font-bold text-[#0A2F51] mb-2">Michael Chen</h4>
-                <p className="text-[#178ACB] font-medium mb-3">CTO & Co-Founder</p>
-                <p className="text-[#0E5A8A] text-sm">
-                  AI research scientist with expertise in RAG architectures. 
-                  Former lead at major tech companies, specializing in 
-                  enterprise-grade AI systems for knowledge-intensive industries.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
         {/* Call to Action */}
         <div className="text-center">
           <div className="bg-gradient-to-r from-[#178ACB] to-[#29A09D] p-8 rounded-lg text-white max-w-4xl mx-auto">
