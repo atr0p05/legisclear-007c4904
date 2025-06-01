@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -88,7 +87,7 @@ export const TailoredSolutionsTabbed = () => {
   ];
 
   return (
-    <section id="tailored-success" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="tailored-solutions" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0A2F51] mb-6">
