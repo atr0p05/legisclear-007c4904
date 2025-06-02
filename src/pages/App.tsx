@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
 import { LogOut, User, Settings, Home } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
+import { DocumentUpload } from "@/components/product/DocumentUpload";
+import { ResearchAssistant } from "@/components/product/ResearchAssistant";
+import { CaseManager } from "@/components/product/CaseManager";
 
 export const App = () => {
   const navigate = useNavigate();
@@ -61,64 +64,41 @@ export const App = () => {
 
       {/* Main Content */}
       <main className="container mx-auto px-6 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
-            <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-gray-900 mb-4">
-                Welcome to LegisClear
-              </h1>
-              <p className="text-lg text-gray-600 mb-6">
-                Your RAG-powered legal intelligence platform is ready to transform your practice.
-              </p>
-              
-              <div className="grid md:grid-cols-3 gap-6 mt-8">
-                <div className="p-6 bg-gray-50 rounded-lg">
-                  <div className="w-12 h-12 bg-[#178ACB] rounded-lg flex items-center justify-center mb-4 mx-auto">
-                    <User className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Research Assistant</h3>
-                  <p className="text-sm text-gray-600">
-                    Get instant access to verified legal research with complete source citations.
-                  </p>
-                </div>
-                
-                <div className="p-6 bg-gray-50 rounded-lg">
-                  <div className="w-12 h-12 bg-[#43B88C] rounded-lg flex items-center justify-center mb-4 mx-auto">
-                    <Settings className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Document Analysis</h3>
-                  <p className="text-sm text-gray-600">
-                    Upload and analyze legal documents with AI-powered insights.
-                  </p>
-                </div>
-                
-                <div className="p-6 bg-gray-50 rounded-lg">
-                  <div className="w-12 h-12 bg-[#0E5A8A] rounded-lg flex items-center justify-center mb-4 mx-auto">
-                    <Home className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Case Management</h3>
-                  <p className="text-sm text-gray-600">
-                    Organize and track your legal cases with intelligent automation.
-                  </p>
-                </div>
-              </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">LegisClear Dashboard</h1>
+            <p className="text-gray-600">Your AI-powered legal intelligence platform</p>
+          </div>
+
+          {/* Product Components Grid */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-8">
+            <div className="space-y-8">
+              <ResearchAssistant />
+              <CaseManager />
+            </div>
+            <div>
+              <DocumentUpload />
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-[#178ACB] to-[#43B88C] rounded-lg p-8 text-white text-center">
-            <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
-            <p className="mb-6 opacity-90">
-              This is where we'll integrate the full LegisClear product components from your other project. 
-              The authentication and routing infrastructure is now ready for the next phase.
-            </p>
-            <Button
-              className="bg-white text-[#178ACB] hover:bg-gray-100"
-              onClick={() => {
-                alert("Next phase: Import product components from the other Lovable project!");
-              }}
-            >
-              Launch LegisClear AI
-            </Button>
+          {/* Stats Overview */}
+          <div className="grid md:grid-cols-4 gap-6 mb-8">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="text-2xl font-bold text-[#178ACB]">24</div>
+              <div className="text-sm text-gray-600">Active Cases</div>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="text-2xl font-bold text-[#43B88C]">156</div>
+              <div className="text-sm text-gray-600">Documents Processed</div>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="text-2xl font-bold text-[#0E5A8A]">89%</div>
+              <div className="text-sm text-gray-600">Research Accuracy</div>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="text-2xl font-bold text-[#178ACB]">12hrs</div>
+              <div className="text-sm text-gray-600">Time Saved</div>
+            </div>
           </div>
         </div>
       </main>
