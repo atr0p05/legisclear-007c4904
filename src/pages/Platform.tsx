@@ -23,6 +23,7 @@ import { useOneTimeAnimation } from "@/hooks/useOneTimeAnimation";
 const Platform = () => {
   const navigate = useNavigate();
   const { elementRef: heroRef, isVisible: heroVisible } = useOneTimeAnimation({ threshold: 0.3 });
+  const { elementRef: journeyRef, isVisible: journeyVisible } = useOneTimeAnimation({ threshold: 0.2 });
 
   const handleGetStarted = () => {
     navigate("/signup");
@@ -112,11 +113,34 @@ const Platform = () => {
     "PracticePanther"
   ];
 
+  const journeyMilestones = [
+    {
+      year: "2025",
+      title: "LegisClear Founded",
+      description: "Founded with the mission to bring verifiable AI intelligence to legal professionals through RAG technology."
+    },
+    {
+      year: "2025",
+      title: "RAG Platform Development",
+      description: "Developed our proprietary RAG-powered legal intelligence platform with comprehensive source verification."
+    },
+    {
+      year: "2025",
+      title: "Security & Compliance",
+      description: "Achieved enterprise-grade security standards and regulatory compliance frameworks."
+    },
+    {
+      year: "2025",
+      title: "Market Launch",
+      description: "Launched LegisClear to serve law firms, corporate legal departments, and individual attorneys."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <Navigation />
       
-      {/* Hero Section - New Homepage Design */}
+      {/* Hero Section */}
       <section 
         ref={heroRef}
         className="min-h-screen flex items-center justify-center relative overflow-hidden"
@@ -147,9 +171,8 @@ const Platform = () => {
             <p className={`text-xl md:text-2xl mb-8 text-gray-200 transition-all duration-1000 delay-500 ${
               heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
-              LegisClear's RAG AI transforms complex legal work into verified, actionable intelligence. 
-              Get <strong>6-80x faster research</strong>, <strong>unmatched accuracy</strong>, 
-              and <strong>complete verifiability</strong>—all powered by an expert legal library and built-in fact-checker.
+              Traditional AI models can generate plausible but incorrect information. RAG technology retrieves verified 
+              information first, then generates responses, ensuring every answer is factual and traceable.
             </p>
             
             <div className={`bg-white/10 backdrop-blur-md rounded-lg p-6 mb-8 transition-all duration-1000 delay-700 transform ${
@@ -173,19 +196,56 @@ const Platform = () => {
               heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
               <Button
-                onClick={handleGetStarted}
-                className="bg-[#43B88C] hover:bg-[#339966] text-white px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
+                onClick={() => navigate("/signup")}
+                className="bg-white text-[#178ACB] hover:bg-gray-100 px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
               >
-                Get Started Free
-              </Button>
-              
-              <Button
-                onClick={handleRequestDemo}
-                className="bg-white text-[#0A2F51] hover:bg-gray-100 hover:text-[#0A2F51] px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300 border-2 border-white"
-              >
-                Request Demo
+                Explore Our Platform
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Journey Section */}
+      <section 
+        ref={journeyRef}
+        className="py-20 bg-gray-50"
+      >
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className={`text-3xl md:text-4xl font-bold text-[#0A2F51] mb-6 transition-all duration-1000 ${
+              journeyVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
+              Our Journey
+            </h2>
+            <p className={`text-xl text-[#0E5A8A] max-w-3xl mx-auto transition-all duration-1000 delay-300 ${
+              journeyVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
+              From concept to launch, we've been focused on delivering AI that legal professionals can trust.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            {journeyMilestones.map((milestone, index) => (
+              <div 
+                key={index}
+                className={`flex items-center mb-12 transition-all duration-1000 ${
+                  journeyVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+                }`}
+                style={{ transitionDelay: `${index * 200 + 500}ms` }}
+              >
+                <div className="flex-shrink-0 w-20 text-right mr-8">
+                  <span className="text-2xl font-bold text-[#43B88C]">{milestone.year}</span>
+                </div>
+                <div className="flex-shrink-0 w-4 h-4 bg-[#43B88C] rounded-full mr-8 relative">
+                  <div className="absolute top-4 left-1/2 w-0.5 h-20 bg-[#43B88C]/30 transform -translate-x-1/2 last:hidden"></div>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-xl font-bold text-[#0A2F51] mb-2">{milestone.title}</h3>
+                  <p className="text-[#0E5A8A]">{milestone.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -371,7 +431,7 @@ const Platform = () => {
               Ready to Transform Your Legal Practice?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              See how LegisClear's platform can streamline your workflows, reduce costs, and improve outcomes for your clients.
+              Join the legal professionals who are already experiencing the power of verifiable AI intelligence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
