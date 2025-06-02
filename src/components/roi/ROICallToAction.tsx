@@ -20,8 +20,7 @@ export const ROICallToAction = () => {
           </Button>
           <Button 
             onClick={() => window.location.href = "mailto:andre@legisclear.com?subject=Request for RAG Demo"}
-            variant="outline"
-            className="border-white text-white hover:bg-white hover:text-[#0A2F51] px-8 py-3"
+            className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-8 py-3 border-2 border-[#43B88C]"
           >
             Request Demo
           </Button>
