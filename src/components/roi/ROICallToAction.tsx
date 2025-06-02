@@ -18,6 +18,13 @@ export const ROICallToAction = () => {
           >
             Download Detailed ROI Report
           </Button>
+          <Button 
+            onClick={() => window.location.href = "mailto:andre@legisclear.com?subject=Request for RAG Demo"}
+            variant="outline"
+            className="border-white text-white hover:bg-white hover:text-[#0A2F51] px-8 py-3"
+          >
+            Request Demo
+          </Button>
         </div>
       </div>
     </div>

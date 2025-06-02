@@ -131,7 +131,7 @@ export const TrustSecuritySection = () => {
           </Card>
         </div>
 
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+        <div className="bg-white rounded-lg shadow-lg p-8">
           <h3 className="text-2xl font-bold text-[#0A2F51] mb-6 text-center">
             Why RAG Technology Ensures Trustworthy Legal AI
           </h3>
@@ -171,26 +171,6 @@ export const TrustSecuritySection = () => {
                 professional standards. Legal professionals can verify, review, and cite the exact sources used, 
                 enabling confident decision-making and supporting due diligence requirements.
               </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-[#178ACB] to-[#29A09D] p-8 rounded-lg text-white max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">
-              Experience Secure, Compliant RAG Intelligence
-            </h3>
-            <p className="text-lg opacity-90 mb-6">
-              Join leading legal professionals who trust LegisClear's RAG platform for critical legal research and analysis 
-              while maintaining the highest standards of security, privacy, and professional compliance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#178ACB] hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors">
-                Request Security & Compliance Demo
-              </button>
-              <button className="border border-white text-white hover:bg-white hover:text-[#178ACB] px-8 py-3 rounded-lg font-semibold transition-colors">
-                Download Security Whitepaper
-              </button>
             </div>
           </div>
         </div>
