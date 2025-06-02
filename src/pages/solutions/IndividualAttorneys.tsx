@@ -16,7 +16,8 @@ import {
   ArrowRight,
   Star,
   Award,
-  Target
+  Target,
+  Scale
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
