@@ -29,38 +29,45 @@ export const HeroSection = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <span className="inline-block">
-              Precision Legal Intelligence,
+              The Future of Law is Clear:
             </span>
             <br />
             <span className={`text-[#43B88C] inline-block transition-all duration-1000 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
-              Powered by 
+              LegisClear's 
               <span className={`mx-2 transition-all duration-500 delay-500 ${
                 isVisible ? 'text-shadow-sm' : ''
               }`}>
                 RAG AI
               </span>
-              .
+              Revolution
             </span>
           </h1>
           
           <p className={`text-xl md:text-2xl mb-8 text-gray-200 transition-all duration-1000 delay-500 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}>
-            Revolutionary Retrieval-Augmented Generation technology transforms complex legislation and case law 
-            into verified, actionable insights. Experience AI with an expert legal library and built-in fact-checker 
-            that delivers 6-80x faster research with unmatched accuracy.
+            Pioneering Retrieval-Augmented Generation technology that transforms complex legal challenges 
+            into verified, actionable intelligence. Experience AI with an expert legal library and built-in 
+            fact-checker that delivers <strong>6-80x faster research</strong> with <strong>unmatched accuracy</strong> 
+            and <strong>complete verifiability</strong>.
           </p>
           
           <div className={`bg-white/10 backdrop-blur-md rounded-lg p-6 mb-8 transition-all duration-1000 delay-700 transform ${
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}>
-            <p className="text-lg font-medium mb-2">The RAG Advantage:</p>
+            <p className="text-lg font-medium mb-3">The RAG Advantage: Where Precision Meets Intelligence</p>
             <div className="grid md:grid-cols-3 gap-4 text-sm">
-              <div className={`transition-all duration-500 delay-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>✓ Source-Verified Accuracy</div>
-              <div className={`transition-all duration-500 delay-1200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>✓ Real-Time Legal Updates</div>
-              <div className={`transition-all duration-500 delay-1400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>✓ Transparent Citations</div>
+              <div className={`transition-all duration-500 delay-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                ✓ <strong>Source-Verified Accuracy:</strong> Every insight traceable to original documents
+              </div>
+              <div className={`transition-all duration-500 delay-1200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                ✓ <strong>Always Current Knowledge:</strong> Real-time legal updates, never outdated
+              </div>
+              <div className={`transition-all duration-500 delay-1400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
+                ✓ <strong>Transparent Citations:</strong> Complete audit trails for legal confidence
+              </div>
             </div>
           </div>
           
@@ -69,10 +76,10 @@ export const HeroSection = () => {
           }`}>
             <EnhancedCTAButton
               variant="demo"
-              href="mailto:andre@legisclear.com?subject=Request for RAG Demo - See RAG in Action"
+              href="mailto:andre@legisclear.com?subject=Request for RAG Demo - Experience the Future of Legal AI"
               stage="decision"
             >
-              See RAG in Action - Request Demo
+              Experience the RAG Revolution - Request Demo
             </EnhancedCTAButton>
           </div>
         </div>
