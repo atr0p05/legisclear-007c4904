@@ -2,13 +2,17 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
-import { Calendar, Menu, X } from "lucide-react";
+import { Calendar, Menu, X, User } from "lucide-react";
 import { useHeroVisibility } from "@/hooks/useOneTimeAnimation";
+import { useNavigate } from "react-router-dom";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { heroRef, isHeroVisible } = useHeroVisibility();
+  const navigate = useNavigate();
+  
+  const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
 
   useEffect(() => {
     // Set hero ref to the actual hero element
@@ -38,6 +42,14 @@ export const Navigation = () => {
     window.location.href = "mailto:andre@legisclear.com?subject=Request for RAG Demo";
   };
 
+  const handleAuthAction = () => {
+    if (isAuthenticated) {
+      navigate("/app");
+    } else {
+      navigate("/login");
+    }
+  };
+
   const navigationItems = [
     { label: "The Challenge", sectionId: "challenge" },
     { label: "Our Solution", sectionId: "solution" },
@@ -62,10 +74,11 @@ export const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <Logo 
-            className={`transition-all duration-300 transform hover:scale-105 ${
+            className={`transition-all duration-300 transform hover:scale-105 cursor-pointer ${
               isScrolled ? "text-[#0A2F51]" : "text-white drop-shadow-md"
             }`}
             size={32}
+            onClick={() => navigate("/")}
           />
           
           {/* Desktop Navigation */}
@@ -104,17 +117,34 @@ export const Navigation = () => {
             </button>
           </div>
 
-          {/* Desktop CTA Button - Only show when hero is not visible */}
-          <div className={`hidden lg:block transition-all duration-500 transform ${
-            showDemoButton ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-4 pointer-events-none'
-          }`}>
+          {/* Desktop CTA Buttons */}
+          <div className="hidden lg:flex items-center space-x-3">
+            {/* Auth Button - Always visible */}
             <Button
-              onClick={openDemoEmail}
-              className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg flex items-center gap-2 font-semibold transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group hover:shadow-xl"
+              onClick={handleAuthAction}
+              variant="ghost"
+              className={`transition-all duration-300 transform hover:scale-105 ${
+                isScrolled 
+                  ? "text-[#0E5A8A] hover:bg-[#178ACB]/10" 
+                  : "text-white hover:bg-white/10"
+              }`}
             >
-              <Calendar className="w-4 h-4 group-hover:animate-bounce" />
-              Request Demo
+              <User className="w-4 h-4 mr-2" />
+              {isAuthenticated ? "Dashboard" : "Sign In"}
             </Button>
+
+            {/* Demo Button - Only show when hero is not visible */}
+            <div className={`transition-all duration-500 transform ${
+              showDemoButton ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-4 pointer-events-none'
+            }`}>
+              <Button
+                onClick={openDemoEmail}
+                className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white px-6 py-2 shadow-lg flex items-center gap-2 font-semibold transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group hover:shadow-xl"
+              >
+                <Calendar className="w-4 h-4 group-hover:animate-bounce" />
+                Request Demo
+              </Button>
+            </div>
           </div>
         </div>
 
@@ -140,12 +170,20 @@ export const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <button
-                onClick={openDemoEmail}
-                className="block w-full text-left px-4 py-3 text-[#178ACB] font-semibold hover:bg-[#178ACB]/10 transition-all duration-300 transform hover:translate-x-2 border-t border-gray-200 mt-2"
-              >
-                Request Demo
-              </button>
+              <div className="border-t border-gray-200 mt-2 pt-2 space-y-2">
+                <button
+                  onClick={handleAuthAction}
+                  className="block w-full text-left px-4 py-3 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-all duration-300 font-medium transform hover:translate-x-2"
+                >
+                  {isAuthenticated ? "Dashboard" : "Sign In"}
+                </button>
+                <button
+                  onClick={openDemoEmail}
+                  className="block w-full text-left px-4 py-3 text-[#178ACB] font-semibold hover:bg-[#178ACB]/10 transition-all duration-300 transform hover:translate-x-2"
+                >
+                  Request Demo
+                </button>
+              </div>
             </div>
           </div>
         </div>

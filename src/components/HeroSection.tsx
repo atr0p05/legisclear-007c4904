@@ -1,17 +1,27 @@
 
 import React from "react";
-import { EnhancedCTAButton } from "@/components/EnhancedCTAButton";
+import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { useOneTimeAnimation } from "@/hooks/useOneTimeAnimation";
+import { useNavigate } from "react-router-dom";
 
 export const HeroSection = () => {
   const { elementRef: heroRef, isVisible } = useOneTimeAnimation({ threshold: 0.1 });
+  const navigate = useNavigate();
 
   const scrollToNext = () => {
     const element = document.getElementById("challenge");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleGetStarted = () => {
+    navigate("/signup");
+  };
+
+  const handleRequestDemo = () => {
+    window.location.href = "mailto:andre@legisclear.com?subject=Request for RAG Demo - Experience the Future of Legal AI";
   };
 
   return (
@@ -69,17 +79,23 @@ export const HeroSection = () => {
             </div>
           </div>
           
-          <div className={`flex justify-center transition-all duration-1000 delay-1000 ${
+          <div className={`flex justify-center space-x-4 transition-all duration-1000 delay-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}>
-            <EnhancedCTAButton
-              variant="demo"
-              href="mailto:andre@legisclear.com?subject=Request for RAG Demo - Experience the Future of Legal AI"
-              stage="decision"
-              className="px-8 py-4 text-lg"
+            <Button
+              onClick={handleGetStarted}
+              className="bg-[#43B88C] hover:bg-[#339966] text-white px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
             >
-              Request a Demo
-            </EnhancedCTAButton>
+              Get Started Free
+            </Button>
+            
+            <Button
+              onClick={handleRequestDemo}
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-[#0A2F51] px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
+            >
+              Request Demo
+            </Button>
           </div>
         </div>
       </div>
