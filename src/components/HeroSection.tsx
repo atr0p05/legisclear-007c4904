@@ -91,8 +91,7 @@ export const HeroSection = () => {
             
             <Button
               onClick={handleRequestDemo}
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#0A2F51] px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
+              className="bg-white text-[#0A2F51] hover:bg-gray-100 hover:text-[#0A2F51] px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300 border-2 border-white"
             >
               Request Demo
             </Button>
