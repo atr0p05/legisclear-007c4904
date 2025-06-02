@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
 import { Calendar, Menu, X, User, ChevronDown } from "lucide-react";
-import { useHeroVisibility } from "@/hooks/useOneTimeAnimation";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 
@@ -11,20 +10,10 @@ export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
-  const { heroRef, isHeroVisible } = useHeroVisibility();
   const navigate = useNavigate();
   const location = useLocation();
   const { isAuthenticated } = useAuth();
   const isHomePage = location.pathname === '/';
-
-  useEffect(() => {
-    if (isHomePage) {
-      const heroElement = document.getElementById('hero');
-      if (heroElement && heroRef.current !== heroElement) {
-        heroRef.current = heroElement;
-      }
-    }
-  }, [heroRef, isHomePage]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,18 +22,6 @@ export const Navigation = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    if (isHomePage) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        setIsMobileMenuOpen(false);
-      }
-    } else {
-      navigate(`/#${sectionId}`);
-    }
-  };
 
   const openDemoEmail = () => {
     window.location.href = "mailto:andre@legisclear.com?subject=Request for RAG Demo";
@@ -63,16 +40,6 @@ export const Navigation = () => {
     setIsMobileMenuOpen(false);
     setIsSolutionsOpen(false);
   };
-
-  const navigationItems = isHomePage ? [
-    { label: "The Challenge", sectionId: "challenge" },
-    { label: "Our Solution", sectionId: "solution" },
-    { label: "Benefits", sectionId: "benefits" },
-    { label: "Tailored Solutions", sectionId: "tailored-solutions" },
-    { label: "How It Works", sectionId: "how-it-works" },
-    { label: "Trust & Security", sectionId: "trust-security" },
-    { label: "About Us", sectionId: "about-us" }
-  ] : [];
 
   const mainNavItems = [
     { 
@@ -93,7 +60,7 @@ export const Navigation = () => {
   ];
 
   // Show demo button when scrolled on homepage OR always on other pages
-  const showDemoButton = (isHomePage && isScrolled && !isHeroVisible) || !isHomePage;
+  const showDemoButton = (isHomePage && isScrolled) || !isHomePage;
 
   return (
     <nav
@@ -115,76 +82,56 @@ export const Navigation = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6">
-            {isHomePage ? (
-              // Homepage sections navigation
-              navigationItems.map((item, index) => (
-                <button
-                  key={item.sectionId}
-                  onClick={() => scrollToSection(item.sectionId)}
-                  className={`relative transition-all duration-300 font-medium text-sm hover:scale-105 transform group ${
-                    isScrolled || !isHomePage
-                      ? "text-[#0E5A8A] hover:text-[#178ACB]" 
-                      : "text-white/90 hover:text-white drop-shadow-sm"
-                  }`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full"></span>
-                </button>
-              ))
-            ) : (
-              // Multi-page navigation
-              mainNavItems.map((item, index) => (
-                <div key={item.label} className="relative">
-                  {item.hasDropdown ? (
-                    <div 
-                      className="relative"
-                      onMouseEnter={() => setIsSolutionsOpen(true)}
-                      onMouseLeave={() => setIsSolutionsOpen(false)}
-                    >
-                      <button
-                        className={`relative transition-all duration-300 font-medium text-sm hover:scale-105 transform group flex items-center gap-1 ${
-                          isScrolled || !isHomePage
-                            ? "text-[#0E5A8A] hover:text-[#178ACB]" 
-                            : "text-white/90 hover:text-white drop-shadow-sm"
-                        }`}
-                      >
-                        {item.label}
-                        <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isSolutionsOpen ? 'rotate-180' : ''}`} />
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full"></span>
-                      </button>
-                      
-                      {isSolutionsOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border py-2 z-50">
-                          {item.items?.map((subItem) => (
-                            <button
-                              key={subItem.path}
-                              onClick={() => handleNavigation(subItem.path)}
-                              className="block w-full text-left px-4 py-2 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-colors duration-200"
-                            >
-                              {subItem.label}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ) : (
+            {mainNavItems.map((item, index) => (
+              <div key={item.label} className="relative">
+                {item.hasDropdown ? (
+                  <div 
+                    className="relative"
+                    onMouseEnter={() => setIsSolutionsOpen(true)}
+                    onMouseLeave={() => setIsSolutionsOpen(false)}
+                  >
                     <button
-                      onClick={() => handleNavigation(item.path)}
-                      className={`relative transition-all duration-300 font-medium text-sm hover:scale-105 transform group ${
+                      className={`relative transition-all duration-300 font-medium text-sm hover:scale-105 transform group flex items-center gap-1 ${
                         isScrolled || !isHomePage
                           ? "text-[#0E5A8A] hover:text-[#178ACB]" 
                           : "text-white/90 hover:text-white drop-shadow-sm"
                       }`}
-                      style={{ animationDelay: `${index * 100}ms` }}
                     >
                       {item.label}
+                      <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isSolutionsOpen ? 'rotate-180' : ''}`} />
                       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full"></span>
                     </button>
-                  )}
-                </div>
-              ))
-            )}
+                    
+                    {isSolutionsOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border py-2 z-50">
+                        {item.items?.map((subItem) => (
+                          <button
+                            key={subItem.path}
+                            onClick={() => handleNavigation(subItem.path)}
+                            className="block w-full text-left px-4 py-2 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-colors duration-200"
+                          >
+                            {subItem.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => handleNavigation(item.path)}
+                    className={`relative transition-all duration-300 font-medium text-sm hover:scale-105 transform group ${
+                      isScrolled || !isHomePage
+                        ? "text-[#0E5A8A] hover:text-[#178ACB]" 
+                        : "text-white/90 hover:text-white drop-shadow-sm"
+                    }`}
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    {item.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full"></span>
+                  </button>
+                )}
+              </div>
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
@@ -243,50 +190,33 @@ export const Navigation = () => {
             isScrolled || !isHomePage ? "bg-white" : "bg-white/95 backdrop-blur-md"
           }`}>
             <div className="py-4 space-y-2">
-              {isHomePage ? (
-                navigationItems.map((item, index) => (
-                  <button
-                    key={item.sectionId}
-                    onClick={() => scrollToSection(item.sectionId)}
-                    className="block w-full text-left px-4 py-3 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-all duration-300 font-medium transform hover:translate-x-2"
-                    style={{ 
-                      animationDelay: `${index * 50}ms`,
-                      opacity: isMobileMenuOpen ? 1 : 0,
-                      transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(-10px)'
-                    }}
-                  >
-                    {item.label}
-                  </button>
-                ))
-              ) : (
-                mainNavItems.map((item, index) => (
-                  <div key={item.label}>
-                    {item.hasDropdown ? (
-                      <div>
-                        <div className="px-4 py-2 text-[#0E5A8A] font-semibold text-sm border-b border-gray-200">
-                          {item.label}
-                        </div>
-                        {item.items?.map((subItem) => (
-                          <button
-                            key={subItem.path}
-                            onClick={() => handleNavigation(subItem.path)}
-                            className="block w-full text-left px-8 py-2 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-all duration-300 transform hover:translate-x-2"
-                          >
-                            {subItem.label}
-                          </button>
-                        ))}
-                      </div>
-                    ) : (
-                      <button
-                        onClick={() => handleNavigation(item.path)}
-                        className="block w-full text-left px-4 py-3 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-all duration-300 font-medium transform hover:translate-x-2"
-                      >
+              {mainNavItems.map((item, index) => (
+                <div key={item.label}>
+                  {item.hasDropdown ? (
+                    <div>
+                      <div className="px-4 py-2 text-[#0E5A8A] font-semibold text-sm border-b border-gray-200">
                         {item.label}
-                      </button>
-                    )}
-                  </div>
-                ))
-              )}
+                      </div>
+                      {item.items?.map((subItem) => (
+                        <button
+                          key={subItem.path}
+                          onClick={() => handleNavigation(subItem.path)}
+                          className="block w-full text-left px-8 py-2 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-all duration-300 transform hover:translate-x-2"
+                        >
+                          {subItem.label}
+                        </button>
+                      ))}
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => handleNavigation(item.path)}
+                      className="block w-full text-left px-4 py-3 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-all duration-300 font-medium transform hover:translate-x-2"
+                    >
+                      {item.label}
+                    </button>
+                  )}
+                </div>
+              ))}
               <div className="border-t border-gray-200 mt-2 pt-2 space-y-2">
                 <button
                   onClick={handleAuthAction}
