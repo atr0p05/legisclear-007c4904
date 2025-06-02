@@ -1,4 +1,3 @@
-
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -19,9 +18,19 @@ import {
   ArrowRight
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useOneTimeAnimation } from "@/hooks/useOneTimeAnimation";
 
 const Platform = () => {
   const navigate = useNavigate();
+  const { elementRef: heroRef, isVisible: heroVisible } = useOneTimeAnimation({ threshold: 0.3 });
+
+  const handleGetStarted = () => {
+    navigate("/signup");
+  };
+
+  const handleRequestDemo = () => {
+    window.location.href = "mailto:andre@legisclear.com?subject=Request for RAG Demo - Experience the Future of Legal AI";
+  };
 
   const features = [
     {
@@ -107,29 +116,74 @@ const Platform = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-[#0A2F51] to-[#178ACB]">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              The LegisClear Platform
+      {/* Hero Section - New Homepage Design */}
+      <section 
+        ref={heroRef}
+        className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A2F51] via-[#0E5A8A] to-[#178ACB]"></div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center text-white max-w-5xl mx-auto">
+            <h1 className={`text-5xl md:text-7xl font-bold mb-6 transition-all duration-1000 ease-out ${
+              heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
+              <span className="inline-block">
+                LegisClear: Revolutionizing Legal Intelligence
+              </span>
+              <br />
+              <span className={`text-[#43B88C] inline-block transition-all duration-1000 delay-300 ${
+                heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}>
+                with Verifiable
+                <span className={`mx-2 transition-all duration-500 delay-500 ${
+                  heroVisible ? 'text-shadow-sm' : ''
+                }`}>
+                  RAG AI
+                </span>
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90">
-              Experience the power of RAG-driven legal intelligence with our comprehensive suite of AI-powered tools designed specifically for legal professionals.
+            
+            <p className={`text-xl md:text-2xl mb-8 text-gray-200 transition-all duration-1000 delay-500 ${
+              heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}>
+              LegisClear's RAG AI transforms complex legal work into verified, actionable intelligence. 
+              Get <strong>6-80x faster research</strong>, <strong>unmatched accuracy</strong>, 
+              and <strong>complete verifiability</strong>—all powered by an expert legal library and built-in fact-checker.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            
+            <div className={`bg-white/10 backdrop-blur-md rounded-lg p-6 mb-8 transition-all duration-1000 delay-700 transform ${
+              heroVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            }`}>
+              <p className="text-lg font-medium mb-3">The RAG Advantage: Where Precision Meets Intelligence</p>
+              <div className="grid md:grid-cols-3 gap-4 text-sm">
+                <div className={`transition-all duration-500 delay-1000 ${heroVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                  ✓ <strong>Source-Verified Accuracy:</strong> Every insight traceable to original documents
+                </div>
+                <div className={`transition-all duration-500 delay-1200 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                  ✓ <strong>Always Current Knowledge:</strong> Real-time legal updates, never outdated
+                </div>
+                <div className={`transition-all duration-500 delay-1400 ${heroVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
+                  ✓ <strong>Transparent Citations:</strong> Complete audit trails for legal confidence
+                </div>
+              </div>
+            </div>
+            
+            <div className={`flex justify-center space-x-4 transition-all duration-1000 delay-1000 ${
+              heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}>
               <Button
-                onClick={() => window.location.href = "mailto:andre@legisclear.com?subject=Request for Platform Demo"}
-                className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-8 py-4 text-lg font-semibold"
+                onClick={handleGetStarted}
+                className="bg-[#43B88C] hover:bg-[#339966] text-white px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
               >
-                Schedule Platform Demo
+                Get Started Free
               </Button>
+              
               <Button
-                onClick={() => navigate("/contact")}
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#178ACB] px-8 py-4 text-lg font-semibold"
+                onClick={handleRequestDemo}
+                className="bg-white text-[#0A2F51] hover:bg-gray-100 hover:text-[#0A2F51] px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300 border-2 border-white"
               >
-                Contact Sales
+                Request Demo
               </Button>
             </div>
           </div>
@@ -322,14 +376,14 @@ const Platform = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={() => window.location.href = "mailto:andre@legisclear.com?subject=Request for Platform Demo"}
-                className="bg-white text-[#178ACB] hover:bg-gray-100 px-8 py-3 text-lg font-semibold"
+                className="bg-white text-[#178ACB] hover:bg-gray-100 px-8 py-3 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
               >
                 Schedule Platform Demo
               </Button>
               <Button
                 onClick={() => navigate("/solutions")}
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#178ACB] px-8 py-3 text-lg font-semibold"
+                className="border-white text-white hover:bg-white hover:text-[#178ACB] px-8 py-3 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
               >
                 Explore Solutions
                 <ArrowRight className="w-4 h-4 ml-2" />

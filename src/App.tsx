@@ -3,14 +3,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
-import Index from "./pages/Index";
+import Platform from "./pages/Platform";
 import Solutions from "./pages/Solutions";
 import LawFirms from "./pages/solutions/LawFirms";
 import CorporateLegal from "./pages/solutions/CorporateLegal";
 import IndividualAttorneys from "./pages/solutions/IndividualAttorneys";
-import Platform from "./pages/Platform";
 import WhyAI from "./pages/WhyAI";
 import TrustSecurity from "./pages/TrustSecurity";
 import AboutUs from "./pages/AboutUs";
@@ -32,8 +31,11 @@ const AppRouter = () => (
       <BrowserRouter>
         <AuthProvider>
           <Routes>
-            {/* Marketing/Landing Pages */}
-            <Route path="/" element={<Index />} />
+            {/* Platform is now the homepage */}
+            <Route path="/" element={<Platform />} />
+            
+            {/* Redirect old platform route to home */}
+            <Route path="/platform" element={<Navigate to="/" replace />} />
             
             {/* Solutions Pages */}
             <Route path="/solutions" element={<Solutions />} />
@@ -41,8 +43,7 @@ const AppRouter = () => (
             <Route path="/solutions/corporate-legal" element={<CorporateLegal />} />
             <Route path="/solutions/individual-attorneys" element={<IndividualAttorneys />} />
             
-            {/* Platform & Company Pages */}
-            <Route path="/platform" element={<Platform />} />
+            {/* Company Pages */}
             <Route path="/why-ai" element={<WhyAI />} />
             <Route path="/trust-security" element={<TrustSecurity />} />
             <Route path="/about" element={<AboutUs />} />

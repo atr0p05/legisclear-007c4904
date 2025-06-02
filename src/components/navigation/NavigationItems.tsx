@@ -17,7 +17,6 @@ export const mainNavItems: NavigationItem[] = [
       { label: "All Solutions", path: "/solutions" }
     ]
   },
-  { label: "Platform", path: "/platform" },
   { label: "Why AI?", path: "/why-ai" },
   { label: "Trust & Security", path: "/trust-security" },
   { label: "Resources", path: "/resources" },
