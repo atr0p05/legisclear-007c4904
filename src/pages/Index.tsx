@@ -5,11 +5,11 @@ import { SolutionSection } from "@/components/SolutionSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { TailoredSolutionsTabbed } from "@/components/TailoredSolutionsTabbed";
 import { EnhancedHowItWorksSection } from "@/components/EnhancedHowItWorksSection";
-import { TrustSecuritySection } from "@/components/TrustSecuritySection";
 import { ROICalculator } from "@/components/ROICalculator";
 import { VisionSection } from "@/components/VisionSection";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
+import { CTASection } from "@/components/CTASection";
 
 const Index = () => {
   return (
@@ -21,8 +21,8 @@ const Index = () => {
       <BenefitsSection />
       <TailoredSolutionsTabbed />
       <EnhancedHowItWorksSection />
-      <TrustSecuritySection />
       <ROICalculator />
+      <CTASection />
       <VisionSection />
       <Footer />
     </div>
