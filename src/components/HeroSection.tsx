@@ -29,29 +29,27 @@ export const HeroSection = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <span className="inline-block">
-              The Future of Law is Clear:
+              LegisClear: Revolutionizing Legal Intelligence
             </span>
             <br />
             <span className={`text-[#43B88C] inline-block transition-all duration-1000 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
-              LegisClear's 
+              with Verifiable
               <span className={`mx-2 transition-all duration-500 delay-500 ${
                 isVisible ? 'text-shadow-sm' : ''
               }`}>
                 RAG AI
               </span>
-              Revolution
             </span>
           </h1>
           
           <p className={`text-xl md:text-2xl mb-8 text-gray-200 transition-all duration-1000 delay-500 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}>
-            Pioneering Retrieval-Augmented Generation technology that transforms complex legal challenges 
-            into verified, actionable intelligence. Experience AI with an expert legal library and built-in 
-            fact-checker that delivers <strong>6-80x faster research</strong> with <strong>unmatched accuracy</strong> 
-            and <strong>complete verifiability</strong>.
+            LegisClear's RAG AI transforms complex legal work into verified, actionable intelligence. 
+            Get <strong>6-80x faster research</strong>, <strong>unmatched accuracy</strong>, 
+            and <strong>complete verifiability</strong>—all powered by an expert legal library and built-in fact-checker.
           </p>
           
           <div className={`bg-white/10 backdrop-blur-md rounded-lg p-6 mb-8 transition-all duration-1000 delay-700 transform ${
@@ -78,8 +76,9 @@ export const HeroSection = () => {
               variant="demo"
               href="mailto:andre@legisclear.com?subject=Request for RAG Demo - Experience the Future of Legal AI"
               stage="decision"
+              className="px-8 py-4 text-lg"
             >
-              Experience the RAG Revolution - Request Demo
+              Request a Demo
             </EnhancedCTAButton>
           </div>
         </div>
