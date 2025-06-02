@@ -1,15 +1,17 @@
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/Logo";
-import { Calendar, Menu, X, User, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
+import { Logo } from "@/components/Logo";
+import { mainNavItems } from "./navigation/NavigationItems";
+import { DesktopNavigation } from "./navigation/DesktopNavigation";
+import { MobileNavigation } from "./navigation/MobileNavigation";
+import { NavigationButtons } from "./navigation/NavigationButtons";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { isAuthenticated } = useAuth();
@@ -38,29 +40,7 @@ export const Navigation = () => {
   const handleNavigation = (path: string) => {
     navigate(path);
     setIsMobileMenuOpen(false);
-    setIsSolutionsOpen(false);
   };
-
-  const mainNavItems = [
-    { 
-      label: "Solutions", 
-      hasDropdown: true,
-      items: [
-        { label: "For Law Firms", path: "/solutions/law-firms" },
-        { label: "For Corporate Legal", path: "/solutions/corporate-legal" },
-        { label: "For Individual Attorneys", path: "/solutions/individual-attorneys" },
-        { label: "All Solutions", path: "/solutions" }
-      ]
-    },
-    { label: "Platform", path: "/platform" },
-    { label: "Trust & Security", path: "/trust-security" },
-    { label: "Resources", path: "/resources" },
-    { label: "About", path: "/about" },
-    { label: "Contact", path: "/contact" }
-  ];
-
-  // Show demo button when scrolled on homepage OR always on other pages
-  const showDemoButton = (isHomePage && isScrolled) || !isHomePage;
 
   return (
     <nav
@@ -81,58 +61,11 @@ export const Navigation = () => {
           />
           
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
-            {mainNavItems.map((item, index) => (
-              <div key={item.label} className="relative">
-                {item.hasDropdown ? (
-                  <div 
-                    className="relative"
-                    onMouseEnter={() => setIsSolutionsOpen(true)}
-                    onMouseLeave={() => setIsSolutionsOpen(false)}
-                  >
-                    <button
-                      className={`relative transition-all duration-300 font-medium text-sm hover:scale-105 transform group flex items-center gap-1 ${
-                        isScrolled || !isHomePage
-                          ? "text-[#0E5A8A] hover:text-[#178ACB]" 
-                          : "text-white/90 hover:text-white drop-shadow-sm"
-                      }`}
-                    >
-                      {item.label}
-                      <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isSolutionsOpen ? 'rotate-180' : ''}`} />
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full"></span>
-                    </button>
-                    
-                    {isSolutionsOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border py-2 z-50">
-                        {item.items?.map((subItem) => (
-                          <button
-                            key={subItem.path}
-                            onClick={() => handleNavigation(subItem.path)}
-                            className="block w-full text-left px-4 py-2 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-colors duration-200"
-                          >
-                            {subItem.label}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => handleNavigation(item.path)}
-                    className={`relative transition-all duration-300 font-medium text-sm hover:scale-105 transform group ${
-                      isScrolled || !isHomePage
-                        ? "text-[#0E5A8A] hover:text-[#178ACB]" 
-                        : "text-white/90 hover:text-white drop-shadow-sm"
-                    }`}
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    {item.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full"></span>
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
+          <DesktopNavigation 
+            items={mainNavItems}
+            onNavigate={handleNavigation}
+            isScrolled={isScrolled}
+          />
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
@@ -152,88 +85,24 @@ export const Navigation = () => {
           </div>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-3">
-            {/* Auth Button - Always visible */}
-            <Button
-              onClick={handleAuthAction}
-              variant="ghost"
-              className={`transition-all duration-300 transform hover:scale-105 ${
-                isScrolled || !isHomePage
-                  ? "text-[#0E5A8A] hover:bg-[#178ACB]/10" 
-                  : "text-white hover:bg-white/10"
-              }`}
-            >
-              <User className="w-4 h-4 mr-2" />
-              {isAuthenticated ? "Dashboard" : "Sign In"}
-            </Button>
-
-            {/* Demo Button */}
-            <div className={`transition-all duration-500 transform ${
-              showDemoButton ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-4 pointer-events-none'
-            }`}>
-              <Button
-                onClick={openDemoEmail}
-                className="bg-[#178ACB] text-white hover:bg-[#0E5A8A] px-6 py-2 shadow-lg flex items-center gap-2 font-semibold transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group hover:shadow-xl"
-              >
-                <Calendar className="w-4 h-4 group-hover:animate-bounce" />
-                Request Demo
-              </Button>
-            </div>
-          </div>
+          <NavigationButtons 
+            onAuthAction={handleAuthAction}
+            onDemoClick={openDemoEmail}
+            isScrolled={isScrolled}
+            isAuthenticated={isAuthenticated}
+          />
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-          isMobileMenuOpen ? 'max-h-96 mt-4' : 'max-h-0 mt-0'
-        }`}>
-          <div className={`rounded-lg shadow-lg transition-all duration-300 ${
-            isScrolled || !isHomePage ? "bg-white" : "bg-white/95 backdrop-blur-md"
-          }`}>
-            <div className="py-4 space-y-2">
-              {mainNavItems.map((item, index) => (
-                <div key={item.label}>
-                  {item.hasDropdown ? (
-                    <div>
-                      <div className="px-4 py-2 text-[#0E5A8A] font-semibold text-sm border-b border-gray-200">
-                        {item.label}
-                      </div>
-                      {item.items?.map((subItem) => (
-                        <button
-                          key={subItem.path}
-                          onClick={() => handleNavigation(subItem.path)}
-                          className="block w-full text-left px-8 py-2 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-all duration-300 transform hover:translate-x-2"
-                        >
-                          {subItem.label}
-                        </button>
-                      ))}
-                    </div>
-                  ) : (
-                    <button
-                      onClick={() => handleNavigation(item.path)}
-                      className="block w-full text-left px-4 py-3 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-all duration-300 font-medium transform hover:translate-x-2"
-                    >
-                      {item.label}
-                    </button>
-                  )}
-                </div>
-              ))}
-              <div className="border-t border-gray-200 mt-2 pt-2 space-y-2">
-                <button
-                  onClick={handleAuthAction}
-                  className="block w-full text-left px-4 py-3 text-[#0E5A8A] hover:bg-[#178ACB]/10 hover:text-[#178ACB] transition-all duration-300 font-medium transform hover:translate-x-2"
-                >
-                  {isAuthenticated ? "Dashboard" : "Sign In"}
-                </button>
-                <button
-                  onClick={openDemoEmail}
-                  className="block w-full text-left px-4 py-3 text-[#178ACB] font-semibold hover:bg-[#178ACB]/10 transition-all duration-300 transform hover:translate-x-2"
-                >
-                  Request Demo
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <MobileNavigation 
+          items={mainNavItems}
+          isOpen={isMobileMenuOpen}
+          onNavigate={handleNavigation}
+          onAuthAction={handleAuthAction}
+          onDemoClick={openDemoEmail}
+          isScrolled={isScrolled}
+          isAuthenticated={isAuthenticated}
+        />
       </div>
     </nav>
   );
