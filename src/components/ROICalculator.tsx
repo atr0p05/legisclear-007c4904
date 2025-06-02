@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -178,12 +179,6 @@ export const ROICalculator = () => {
                 See how LegisClear's RAG technology can deliver these savings and efficiency gains for your practice.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  onClick={openEmailWithROI}
-                  className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-8 py-3"
-                >
-                  Schedule Your ROI Demo
-                </Button>
                 <Button 
                   onClick={() => window.location.href = "mailto:andre@legisclear.com?subject=Request for Detailed ROI Report"}
                   className="bg-white text-[#0A2F51] hover:bg-gray-100 px-8 py-3 border-2 border-white"
