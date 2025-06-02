@@ -67,12 +67,6 @@ const Resources = () => {
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               Discover the latest insights, guides, and resources on RAG technology and AI implementation in legal practice.
             </p>
-            <Button
-              onClick={() => window.location.href = "mailto:andre@legisclear.com?subject=Request for Latest Resources"}
-              className="bg-[#43B88C] hover:bg-[#29A09D] text-white px-8 py-4 text-lg font-semibold"
-            >
-              Access Latest Resources
-            </Button>
           </div>
         </div>
       </section>
@@ -91,8 +85,8 @@ const Resources = () => {
 
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {resourceCategories.map((category, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <CardContent className="p-8">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col">
+                <CardContent className="p-8 flex-1 flex flex-col">
                   <div className="mb-6">
                     {category.icon}
                   </div>
@@ -102,7 +96,7 @@ const Resources = () => {
                   <p className="text-[#0E5A8A] mb-6">
                     {category.description}
                   </p>
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-3 mb-6 flex-1">
                     {category.resources.map((resource, resourceIndex) => (
                       <li key={resourceIndex} className="flex items-start">
                         <ArrowRight className="w-4 h-4 text-[#43B88C] mt-0.5 mr-3 flex-shrink-0" />
@@ -111,12 +105,11 @@ const Resources = () => {
                     ))}
                   </ul>
                   <Button
-                    onClick={() => window.location.href = "mailto:andre@legisclear.com?subject=Request for " + category.title}
+                    disabled
                     variant="outline"
-                    className="w-full border-[#178ACB] text-[#178ACB] hover:bg-[#178ACB] hover:text-white"
+                    className="w-full border-[#178ACB] text-[#178ACB] bg-white hover:bg-gray-50 cursor-not-allowed mt-auto"
                   >
-                    Access Resources
-                    <ExternalLink className="w-4 h-4 ml-2" />
+                    Coming Soon
                   </Button>
                 </CardContent>
               </Card>
@@ -138,8 +131,8 @@ const Resources = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <Card className="bg-gradient-to-r from-[#43B88C] to-[#29A09D] text-white">
-              <CardContent className="p-8">
+            <Card className="bg-gradient-to-r from-[#43B88C] to-[#29A09D] text-white h-full flex flex-col">
+              <CardContent className="p-8 flex-1 flex flex-col">
                 <Download className="w-12 h-12 mb-6" />
                 <h3 className="text-2xl font-bold mb-4">
                   The Complete Guide to RAG Technology for Legal Professionals
@@ -148,24 +141,24 @@ const Resources = () => {
                   A comprehensive 40-page guide covering everything from RAG fundamentals to implementation strategies, 
                   security considerations, and ROI calculations specific to legal practice.
                 </p>
-                <ul className="space-y-2 mb-6 text-sm">
+                <ul className="space-y-2 mb-6 text-sm flex-1">
                   <li>• Understanding RAG vs Traditional AI</li>
                   <li>• Implementation roadmap and best practices</li>
                   <li>• Security and compliance frameworks</li>
                   <li>• Real-world case studies and ROI analysis</li>
                 </ul>
                 <Button
-                  onClick={() => window.location.href = "mailto:andre@legisclear.com?subject=Request for Complete RAG Guide"}
-                  className="bg-white text-[#178ACB] hover:bg-gray-100"
+                  disabled
+                  className="bg-white text-[#178ACB] hover:bg-gray-100 cursor-not-allowed mt-auto"
                 >
-                  Download Guide
+                  Coming Soon
                   <Download className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-[#178ACB]">
-              <CardContent className="p-8">
+            <Card className="border-2 border-[#178ACB] h-full flex flex-col">
+              <CardContent className="p-8 flex-1 flex flex-col">
                 <Video className="w-12 h-12 text-[#178ACB] mb-6" />
                 <h3 className="text-2xl font-bold text-[#0A2F51] mb-4">
                   Live Platform Demo Series
@@ -174,17 +167,17 @@ const Resources = () => {
                   Join our weekly live demos to see LegisClear in action, ask questions, and learn about the latest 
                   features and capabilities. Perfect for evaluating the platform for your practice.
                 </p>
-                <ul className="space-y-2 mb-6 text-sm text-[#0E5A8A]">
+                <ul className="space-y-2 mb-6 text-sm text-[#0E5A8A] flex-1">
                   <li>• Interactive platform walkthrough</li>
                   <li>• Live Q&A with our experts</li>
                   <li>• Custom use case discussions</li>
                   <li>• ROI calculation worksheets</li>
                 </ul>
                 <Button
-                  onClick={() => window.location.href = "mailto:andre@legisclear.com?subject=Register for Live Demo Series"}
-                  className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white"
+                  disabled
+                  className="bg-[#178ACB] hover:bg-[#0E5A8A] text-white cursor-not-allowed mt-auto"
                 >
-                  Register for Demo
+                  Coming Soon
                   <Calendar className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>

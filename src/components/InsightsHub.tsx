@@ -109,8 +109,8 @@ export const InsightsHub = () => {
                       <Calendar className="w-3 h-3 mr-1" />
                       {post.date}
                     </span>
-                    <button className="text-[#178ACB] hover:text-[#0E5A8A] text-sm font-medium">
-                      Read More →
+                    <button disabled className="text-gray-400 text-sm font-medium cursor-not-allowed">
+                      Coming Soon
                     </button>
                   </div>
                 </CardContent>
@@ -127,7 +127,7 @@ export const InsightsHub = () => {
           </h3>
           <div className="grid lg:grid-cols-3 gap-8">
             {whitepapers.map((paper, index) => (
-              <Card key={index} className="border-l-4 border-[#29A09D] hover:shadow-lg transition-all duration-300">
+              <Card key={index} className="border-l-4 border-[#29A09D] hover:shadow-lg transition-all duration-300 h-full flex flex-col">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-3">
                     <Badge variant="outline" className="text-[#29A09D]">{paper.category}</Badge>
@@ -137,11 +137,14 @@ export const InsightsHub = () => {
                     {paper.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-[#0E5A8A] text-sm mb-6">{paper.description}</p>
-                  <EnhancedCTAButton variant="download" className="w-full">
-                    Download PDF Guide
-                  </EnhancedCTAButton>
+                <CardContent className="flex-1 flex flex-col">
+                  <p className="text-[#0E5A8A] text-sm mb-6 flex-1">{paper.description}</p>
+                  <button
+                    disabled
+                    className="w-full bg-gray-100 text-gray-500 border border-gray-300 px-4 py-2 rounded cursor-not-allowed"
+                  >
+                    Coming Soon
+                  </button>
                 </CardContent>
               </Card>
             ))}
@@ -175,8 +178,8 @@ export const InsightsHub = () => {
                   <p className="text-[#0E5A8A] text-sm mb-4">{webinar.description}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600">{webinar.date}</span>
-                    <button className="bg-[#0E5A8A] hover:bg-[#178ACB] text-white px-4 py-2 rounded text-sm">
-                      {webinar.type === 'upcoming' ? 'Register' : 'Watch Now'}
+                    <button disabled className="bg-gray-200 text-gray-500 px-4 py-2 rounded text-sm cursor-not-allowed">
+                      Coming Soon
                     </button>
                   </div>
                 </CardContent>
