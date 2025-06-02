@@ -7,7 +7,6 @@ import { TailoredSolutionsTabbed } from "@/components/TailoredSolutionsTabbed";
 import { EnhancedHowItWorksSection } from "@/components/EnhancedHowItWorksSection";
 import { TrustSecuritySection } from "@/components/TrustSecuritySection";
 import { ROICalculator } from "@/components/ROICalculator";
-import { CTASection } from "@/components/CTASection";
 import { VisionSection } from "@/components/VisionSection";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
@@ -24,7 +23,6 @@ const Index = () => {
       <EnhancedHowItWorksSection />
       <TrustSecuritySection />
       <ROICalculator />
-      <CTASection />
       <VisionSection />
       <Footer />
     </div>

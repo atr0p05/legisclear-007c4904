@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -36,31 +35,6 @@ export const ROICalculator = () => {
 
   const handleCalculate = () => {
     setShowResults(true);
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const openEmailWithROI = () => {
-    const subject = encodeURIComponent("ROI Consultation Request - LegisClear RAG Demo");
-    const body = encodeURIComponent(`Hello,
-
-I'm interested in discussing the ROI potential of LegisClear's RAG technology for my practice.
-
-Based on my calculation:
-- Current Monthly Cost: $${results.currentMonthlyCost.toLocaleString()}
-- Projected Annual Savings: $${results.annualSavings.toLocaleString()}
-- Estimated ROI: ${results.roiPercentage}%
-
-I would like to schedule a demo to learn more about how RAG technology can benefit my practice.
-
-Best regards`);
-    
-    window.location.href = `mailto:andre@legisclear.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -188,13 +162,6 @@ Best regards`);
                       <li>• Increased billable hour capacity</li>
                     </ul>
                   </div>
-
-                  <Button 
-                    onClick={openEmailWithROI}
-                    className="w-full bg-[#178ACB] hover:bg-[#0E5A8A] text-white"
-                  >
-                    Discuss Your ROI - Request Demo
-                  </Button>
                 </CardContent>
               </Card>
             )}
