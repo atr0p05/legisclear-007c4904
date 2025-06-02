@@ -4,11 +4,12 @@ import React from 'react';
 interface LogoProps {
   className?: string;
   size?: number;
+  onClick?: () => void;
 }
 
-export const Logo = ({ className = "", size = 40 }: LogoProps) => {
+export const Logo = ({ className = "", size = 40, onClick }: LogoProps) => {
   return (
-    <div className={`inline-flex items-center ${className}`}>
+    <div className={`inline-flex items-center ${onClick ? 'cursor-pointer' : ''} ${className}`} onClick={onClick}>
       <svg
         width={size}
         height={size}

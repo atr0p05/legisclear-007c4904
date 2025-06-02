@@ -4,16 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
 import { LogOut, User, Settings, Home } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 
 export const App = () => {
   const navigate = useNavigate();
-  const userEmail = localStorage.getItem("userEmail");
-  const userName = localStorage.getItem("userName");
+  const { user, logout } = useAuth();
 
   const handleLogout = () => {
-    localStorage.removeItem("isAuthenticated");
-    localStorage.removeItem("userEmail");
-    localStorage.removeItem("userName");
+    logout();
     navigate("/");
   };
 
@@ -26,7 +24,7 @@ export const App = () => {
             <div className="flex items-center space-x-4">
               <Logo className="text-[#0A2F51]" size={32} />
               <div className="text-sm text-gray-600">
-                Welcome back, {userName || userEmail}
+                Welcome back, {user?.name || user?.email}
               </div>
             </div>
             
@@ -110,13 +108,13 @@ export const App = () => {
           <div className="bg-gradient-to-r from-[#178ACB] to-[#43B88C] rounded-lg p-8 text-white text-center">
             <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="mb-6 opacity-90">
-              This is a placeholder for the full LegisClear product application. 
-              The actual product components from your other Lovable project will be integrated here.
+              This is where we'll integrate the full LegisClear product components from your other project. 
+              The authentication and routing infrastructure is now ready for the next phase.
             </p>
             <Button
               className="bg-white text-[#178ACB] hover:bg-gray-100"
               onClick={() => {
-                alert("Product features will be integrated here from your other Lovable project!");
+                alert("Next phase: Import product components from the other Lovable project!");
               }}
             >
               Launch LegisClear AI

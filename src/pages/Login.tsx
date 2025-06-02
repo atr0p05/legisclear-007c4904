@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Logo } from "@/components/Logo";
 import { Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -12,6 +13,7 @@ export const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,8 +21,7 @@ export const Login = () => {
     
     // Simulate login - replace with actual authentication
     setTimeout(() => {
-      localStorage.setItem("isAuthenticated", "true");
-      localStorage.setItem("userEmail", email);
+      login({ email });
       setIsLoading(false);
       navigate("/app");
     }, 1000);

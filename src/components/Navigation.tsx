@@ -5,14 +5,14 @@ import { Logo } from "@/components/Logo";
 import { Calendar, Menu, X, User } from "lucide-react";
 import { useHeroVisibility } from "@/hooks/useOneTimeAnimation";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { heroRef, isHeroVisible } = useHeroVisibility();
   const navigate = useNavigate();
-  
-  const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     // Set hero ref to the actual hero element
