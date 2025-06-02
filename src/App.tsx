@@ -11,6 +11,7 @@ import LawFirms from "./pages/solutions/LawFirms";
 import CorporateLegal from "./pages/solutions/CorporateLegal";
 import IndividualAttorneys from "./pages/solutions/IndividualAttorneys";
 import Platform from "./pages/Platform";
+import WhyAI from "./pages/WhyAI";
 import TrustSecurity from "./pages/TrustSecurity";
 import AboutUs from "./pages/AboutUs";
 import Resources from "./pages/Resources";
@@ -42,6 +43,7 @@ const AppRouter = () => (
             
             {/* Platform & Company Pages */}
             <Route path="/platform" element={<Platform />} />
+            <Route path="/why-ai" element={<WhyAI />} />
             <Route path="/trust-security" element={<TrustSecurity />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/resources" element={<Resources />} />
